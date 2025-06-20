@@ -224,6 +224,85 @@
             margin: 5px;
             border: 1px solid #ffd700;
         }
+
+        /* New AI-Assisted Scholarship Styling */
+        .ai-section {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.1) 0%, rgba(185, 217, 235, 0.1) 100%);
+            border: 2px solid #ffd700;
+        }
+
+        .ai-innovation-badge {
+            background: linear-gradient(45deg, #ffd700, #ffed4e);
+            color: #1a365d;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 0.9em;
+            font-weight: bold;
+            display: inline-block;
+            margin: 10px 5px;
+            border: 2px solid #1a365d;
+            box-shadow: 0 2px 8px rgba(255, 215, 0, 0.3);
+        }
+
+        .book-card {
+            background: rgba(255, 255, 255, 0.8);
+            border: 2px solid #ffd700;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 20px 0;
+            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .book-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(255, 215, 0, 0.3);
+        }
+
+        .book-meta {
+            background: rgba(26, 54, 93, 0.05);
+            border-left: 4px solid #1a365d;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+            font-style: italic;
+        }
+
+        .innovation-highlight {
+            background: linear-gradient(135deg, #e8f4fd 0%, #b9d9eb 100%);
+            border: 2px solid #1a365d;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .innovation-highlight::before {
+            content: "🚀";
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            background: white;
+            padding: 5px 10px;
+            border-radius: 50%;
+            font-size: 1.2em;
+        }
+
+        .methodology-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 15px 0;
+        }
+
+        .methodology-tag {
+            background: rgba(26, 54, 93, 0.1);
+            color: #1a365d;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.85em;
+            border: 1px solid #1a365d;
+        }
     </style>
 </head>
 <body>
@@ -321,6 +400,30 @@
                     <h3>🔍 Applied Research</h3>
                     <p>Work on food system vulnerability assessment, early warning systems, and climate-migration modeling through the FamineWatch platform.</p>
                 </div>
+                
+                <div class="research-card">
+                    <h3>📖 Educational Resources</h3>
+                    <div class="ai-innovation-badge" style="margin-bottom: 10px;">Methodological Innovation</div>
+                    <p>Comprehensive educational materials developed through human-AI collaboration, exploring new frontiers in academic scholarship and pedagogical innovation.</p>
+                    <div style="margin-top: 15px;">
+                        <strong>Quantum Mechanics: Mathematical Formalism with Intuitive Explanations</strong><br>
+                        <small style="color: #718096;">A rigorous yet accessible guide bridging mathematical formalism and practical understanding, developed through innovative human-AI collaborative methodology.</small>
+                    </div>
+                    <div style="margin-top: 15px;">
+                        <a href="./quantum_mechanics_guide.pdf" class="btn btn-secondary" target="_blank">📥 Download</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="innovation-highlight" style="margin-top: 30px;">
+                <h3>🚀 Innovation in Academic Methodology</h3>
+                <p>Our lab explores new approaches to scholarship through <strong>augmented intelligence</strong>—combining deep domain expertise with AI capabilities to create educational resources that achieve unprecedented depth and accessibility. This work represents methodological innovation in academic publishing while maintaining rigorous scholarly standards.</p>
+                
+                <div class="methodology-tags">
+                    <span class="methodology-tag">Human-AI Collaboration</span>
+                    <span class="methodology-tag">Pedagogical Innovation</span>
+                    <span class="methodology-tag">Academic Transparency</span>
+                </div>
             </div>
         </div>
 
@@ -348,7 +451,7 @@
 
         <footer>
             <p>&copy; 2025 Complex Adaptive Systems Lab | Michael J. Puma</p>
-            <p>Advancing climate resilience through complex systems modeling and quantum approaches</p>
+            <p>Advancing climate resilience through complex systems modeling and innovative scholarship methodologies</p>
         </footer>
     </div>
 
@@ -380,8 +483,8 @@
                 });
             }, observerOptions);
 
-            // Observe all research cards
-            document.querySelectorAll('.research-card').forEach(card => {
+            // Observe all research cards and book cards
+            document.querySelectorAll('.research-card, .book-card').forEach(card => {
                 card.style.opacity = '0';
                 card.style.transform = 'translateY(20px)';
                 card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
