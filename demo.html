@@ -1,162 +1,350 @@
-<!-- demo.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>Interactive Research Demo | Complex Adaptive Systems Lab</title>
-  <meta name="description" content="Interactive research demos from the Complex Adaptive Systems Lab, including a Quantum Ising Model visualization." />
-  <link rel="canonical" href="https://mjpuma.github.io/sicilian-american-flag/demo.html" />
+  <title>Interactive Demo — Michael J. Puma</title>
+  <meta name="description" content="Interactive visualization of the quantum Ising model and its connection to food system dynamics and human decision-making under stress." />
+  <link rel="canonical" href="https://mjpuma.github.io/demo.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 
   <style>
+    :root {
+      --navy:  #003865;
+      --cblu:  #9BCBEB;
+      --gold:  #C4A265;
+      --orange:#E77500;
+      --purp:  #4A6FA5;
+      --ice:   #EBF4FB;
+      --lbg:   #F5F8FB;
+      --drk:   #1A2B3C;
+      --gry:   #64748B;
+      --lgry:  #D1E4F0;
+    }
+
     * { margin:0; padding:0; box-sizing:border-box; }
 
-    body{
-      font-family:'Georgia', serif;
-      line-height:1.6;
-      color:#1a365d;
-      background:linear-gradient(135deg,#f7fafc 0%,#b9d9eb 100%);
-      min-height:100vh;
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: var(--drk);
+      background: var(--lbg);
+      line-height: 1.65;
     }
 
-    .container{ max-width:1200px; margin:0 auto; padding:20px; }
+    /* ── HEADER ── */
+    .site-header {
+      background: var(--navy);
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 12px rgba(0,56,101,0.25);
+    }
+    .header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .header-name {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: white;
+      text-decoration: none;
+    }
+    .header-name span { color: var(--cblu); }
+    nav { display: flex; gap: 6px; flex-wrap: wrap; }
+    nav a {
+      color: var(--cblu);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      padding: 6px 12px;
+      border-radius: 20px;
+      border: 1px solid rgba(155,203,235,0.3);
+      transition: all 0.2s;
+    }
+    nav a:hover { background: rgba(155,203,235,0.15); color: white; border-color: var(--cblu); }
+    nav a.active { background: rgba(155,203,235,0.15); color: white; border-color: var(--cblu); }
 
-    header{
-      background:rgba(255,255,255,0.95);
-      backdrop-filter:blur(10px);
-      border-radius:20px;
-      padding:32px;
-      margin-bottom:22px;
-      box-shadow:0 8px 32px rgba(0,0,0,0.1);
-      text-align:center;
-      border:1px solid rgba(255,255,255,0.2);
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(160deg, var(--navy) 0%, #0D2B4E 100%);
+      color: white;
+      padding: 52px 24px 44px;
+    }
+    .hero-inner { max-width: 1100px; margin: 0 auto; }
+    .hero-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+    .hero h1 {
+      font-family: 'EB Garamond', serif;
+      font-size: 2.4rem;
+      font-weight: 400;
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+    .hero p {
+      color: rgba(155,203,235,0.85);
+      font-size: 1rem;
+      max-width: 640px;
+      margin-bottom: 24px;
+    }
+    .btn-primary {
+      background: var(--gold);
+      color: var(--navy);
+      padding: 10px 22px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.875rem;
+      transition: all 0.2s;
+      display: inline-block;
+      margin-right: 10px;
+    }
+    .btn-primary:hover { background: #d4b275; transform: translateY(-1px); }
+    .btn-outline {
+      border: 1px solid rgba(155,203,235,0.5);
+      color: var(--cblu);
+      padding: 10px 22px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.875rem;
+      transition: all 0.2s;
+      display: inline-block;
+    }
+    .btn-outline:hover { background: rgba(155,203,235,0.1); border-color: var(--cblu); }
+
+    /* ── MAIN ── */
+    main { max-width: 1100px; margin: 0 auto; padding: 40px 24px; }
+
+    /* Context cards */
+    .context-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 36px;
+    }
+    .context-card {
+      background: white;
+      border: 1px solid var(--lgry);
+      border-top: 3px solid var(--cblu);
+      border-radius: 6px;
+      padding: 20px;
+    }
+    .context-card.gold { border-top-color: var(--gold); }
+    .context-card.orange { border-top-color: var(--orange); }
+    .context-card h3 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+    .context-card p { font-size: 0.83rem; color: var(--gry); line-height: 1.55; }
+
+    /* Demo frame */
+    .demo-section {
+      background: white;
+      border: 1px solid var(--lgry);
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 28px;
+    }
+    .demo-header {
+      background: var(--navy);
+      padding: 16px 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .demo-header h2 {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 400;
+      color: white;
+    }
+    .demo-header a {
+      font-size: 0.8rem;
+      color: var(--cblu);
+      text-decoration: none;
+      border: 1px solid rgba(155,203,235,0.4);
+      padding: 5px 12px;
+      border-radius: 20px;
+      white-space: nowrap;
+      transition: all 0.2s;
+    }
+    .demo-header a:hover { background: rgba(155,203,235,0.15); }
+    .demo-iframe {
+      width: 100%;
+      height: 660px;
+      border: none;
+      display: block;
+      background: white;
+    }
+    .demo-note {
+      padding: 14px 22px;
+      background: var(--ice);
+      border-top: 1px solid var(--lgry);
+      font-size: 0.8rem;
+      color: var(--gry);
+    }
+    .demo-note code {
+      background: var(--lgry);
+      padding: 1px 5px;
+      border-radius: 3px;
+      font-size: 0.85em;
     }
 
-    h1{
-      color:#1a365d;
-      font-size:2.2em;
-      margin-bottom:10px;
-      font-weight:normal;
-      letter-spacing:-1px;
+    /* Research connection */
+    .connection-box {
+      background: var(--navy);
+      color: white;
+      border-radius: 8px;
+      padding: 28px 32px;
+      margin-bottom: 28px;
+      border-left: 4px solid var(--gold);
+    }
+    .connection-box .label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+    .connection-box h3 {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.4rem;
+      font-weight: 400;
+      margin-bottom: 14px;
+      color: white;
+    }
+    .connection-box p {
+      font-size: 0.9rem;
+      color: rgba(155,203,235,0.85);
+      line-height: 1.65;
+      max-width: 800px;
+    }
+    .connection-box p + p { margin-top: 10px; }
+
+    /* Footer */
+    footer {
+      background: var(--navy);
+      color: rgba(155,203,235,0.8);
+      text-align: center;
+      padding: 28px 24px;
+      font-size: 0.85rem;
+      margin-top: 16px;
+    }
+    footer a { color: var(--cblu); text-decoration: none; }
+    footer a:hover { color: var(--gold); }
+    .footer-name {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.05rem;
+      color: white;
+      margin-bottom: 5px;
     }
 
-    .subtitle{
-      color:#2d3748;
-      font-size:1.1em;
-      font-style:italic;
-    }
-
-    .btn{
-      display:inline-block;
-      background:linear-gradient(135deg,#b9d9eb 0%,#90c2dd 100%);
-      color:#1a365d;
-      padding:12px 25px;
-      text-decoration:none;
-      border-radius:25px;
-      margin:10px 10px 0 0;
-      transition:all 0.3s ease;
-      font-weight:600;
-      border:2px solid #ffd700;
-    }
-
-    .btn:hover{
-      background:linear-gradient(135deg,#ffd700 0%,#ffed4e 100%);
-      color:#1a365d;
-      transform:translateY(-2px);
-      box-shadow:0 4px 12px rgba(255,215,0,0.3);
-    }
-
-    .btn-secondary{
-      background:#718096;
-      color:white;
-      border:2px solid #a0aec0;
-    }
-
-    .btn-secondary:hover{
-      background:#ffd700;
-      color:#1a365d;
-      border-color:#1a365d;
-    }
-
-    .section{
-      background:rgba(255,255,255,0.9);
-      backdrop-filter:blur(10px);
-      border-radius:15px;
-      padding:26px;
-      margin-bottom:25px;
-      box-shadow:0 4px 16px rgba(0,0,0,0.1);
-      border:1px solid rgba(255,255,255,0.2);
-    }
-
-    .section h2{
-      color:#1a365d;
-      border-bottom:3px solid #b9d9eb;
-      padding-bottom:10px;
-      margin-bottom:14px;
-      font-size:1.6em;
-    }
-
-    .demo-iframe{
-      width:100%;
-      height:650px;
-      border:3px solid #ffd700;
-      border-radius:10px;
-      margin-top:15px;
-      box-shadow:0 4px 16px rgba(185,217,235,0.3);
-      background:white;
-    }
-
-    .note{
-      margin-top:12px;
-      color:#2d3748;
-      background:rgba(185,217,235,0.18);
-      border:1px solid rgba(26,54,93,0.15);
-      border-radius:12px;
-      padding:14px;
-    }
-
-    @media (max-width:768px){
-      .container{ padding:10px; }
-      header{ padding:20px; }
-      h1{ font-size:1.8em; }
-      .demo-iframe{ height:560px; }
-      .section{ padding:18px; }
+    @media (max-width: 768px) {
+      .context-grid { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 1.8rem; }
+      .demo-iframe { height: 520px; }
+      .header-inner { flex-direction: column; align-items: flex-start; }
     }
   </style>
 </head>
-
 <body>
-  <div class="container">
-    <header>
-      <h1>Interactive Research Demo</h1>
-      <p class="subtitle">Hands-on visualization prototypes from the lab</p>
-      <div style="margin-top: 12px;">
-        <a href="./index.html" class="btn btn-secondary">← Back to Home</a>
-        <a href="https://github.com/mjpuma/Quantum_Ising" class="btn" target="_blank" rel="noopener">View Source Code →</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="./index.html" class="header-name">Michael J. Puma <span>· Columbia</span></a>
+      <nav>
+        <a href="./index.html">Home</a>
+        <a href="./people.html">People</a>
+        <a href="https://scholar.google.com/citations?user=MvBbhDkAAAAJ" target="_blank" rel="noopener">Publications</a>
+        <a href="./demo.html" class="active">Interactive</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-label">Interactive Visualization</div>
+      <h1>Quantum Ising Model</h1>
+      <p>An interactive exploration of phase transitions and emergent behavior — and how the same mathematical structure underlies decision-making in food markets under systemic stress.</p>
+      <a href="./index.html" class="btn-primary">← Back to Home</a>
+      <a href="https://github.com/mjpuma/Quantum_Ising" class="btn-outline" target="_blank" rel="noopener">View Source Code</a>
+    </div>
+  </section>
+
+  <main>
+
+    <!-- Research connection -->
+    <div class="connection-box">
+      <div class="label">Research Connection</div>
+      <h3>From phase transitions to food market crises</h3>
+      <p>The Ising model describes a lattice of interacting elements — each in one of two states — that can collectively and suddenly flip from one ordered configuration to another. This phase transition is not caused by any single element: it emerges from the accumulated pressure of local interactions crossing a critical threshold.</p>
+      <p>This is the same mathematical intuition behind the CHSH and quantum decision-making work: food markets and human mobility systems exhibit analogous transitions from stability to crisis. Standard rational-actor models assume independent agents and smooth dynamics — they cannot detect the precursor signatures of these transitions. Quantum probability frameworks can, because they allow for the correlations and interference effects that characterize real decision-making under stress. The 29× difference in Bell violation ratios between crisis and non-crisis periods is precisely such a signature.</p>
+    </div>
+
+    <!-- Three context cards -->
+    <div class="context-grid">
+      <div class="context-card">
+        <h3>What is the Ising model?</h3>
+        <p>A lattice of interacting spins (up or down) governed by nearest-neighbor coupling and temperature. Below a critical temperature, the system spontaneously orders. Above it, disorder dominates. The transition between these regimes is sharp — a phase transition.</p>
       </div>
-    </header>
+      <div class="context-card gold">
+        <h3>What to explore in the demo</h3>
+        <p>Adjust temperature and coupling strength and watch the system flip between ordered and disordered phases. Notice how the transition is sudden and collective — no single element causes it. That emergent criticality is the key intuition.</p>
+      </div>
+      <div class="context-card orange">
+        <h3>Connection to food systems</h3>
+        <p>Food markets, trade networks, and evacuation decisions are all systems where many interacting agents can collectively and suddenly transition from stable to crisis behavior. The quantum extension (S3 framework) models the interference effects that arise when those decisions are not independent.</p>
+      </div>
+    </div>
 
-    <div class="section">
-      <h2>🔬 Quantum Ising Model Visualization</h2>
-      <p>
-        Explore how an Ising-like framework illustrates emergent behavior and phase transitions—useful intuition
-        for thinking about cascading dynamics in complex systems.
-      </p>
-
+    <!-- Demo iframe -->
+    <div class="demo-section">
+      <div class="demo-header">
+        <h2>Quantum Ising Model — Interactive Visualization</h2>
+        <a href="https://github.com/mjpuma/Quantum_Ising" target="_blank" rel="noopener">View on GitHub →</a>
+      </div>
       <iframe
         src="./quantum_ising_visualization.html"
         class="demo-iframe"
         title="Quantum Ising Model Visualization"
         loading="lazy">
       </iframe>
-
-      <div class="note">
-        <strong>Troubleshooting:</strong>
-        If the demo doesn’t load, confirm <code>quantum_ising_visualization.html</code> is in the same folder as this page
-        and that GitHub Pages has rebuilt after your last commit.
+      <div class="demo-note">
+        If the visualization does not load, confirm that <code>quantum_ising_visualization.html</code> is in the same directory and that GitHub Pages has rebuilt after your last commit.
       </div>
     </div>
-  </div>
+
+  </main>
+
+  <footer>
+    <div class="footer-name">Michael J. Puma</div>
+    <p>Professor of Climate &nbsp;·&nbsp; Director, CCSR &nbsp;·&nbsp; Columbia Climate School / NASA GISS</p>
+    <p style="margin-top:10px;">
+      <a href="./index.html">Home</a> &nbsp;·&nbsp;
+      <a href="mailto:mjp38@columbia.edu">mjp38@columbia.edu</a> &nbsp;·&nbsp;
+      <a href="https://github.com/mjpuma" target="_blank" rel="noopener">GitHub</a>
+    </p>
+    <p style="margin-top:14px; font-size:0.75rem; opacity:0.5;">&copy; 2026 Michael J. Puma</p>
+  </footer>
+
 </body>
 </html>
