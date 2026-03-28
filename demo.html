@@ -273,7 +273,7 @@
       <a href="./index.html" class="header-name">Michael J. Puma <span>· Columbia</span></a>
       <nav>
         <a href="./index.html">Home</a>
-        <a href="https://scholar.google.com/citations?user=MvBbhDkAAAAJ" target="_blank" rel="noopener">Publications</a>
+        <a href="https://scholar.google.com/citations?user=L4T5olUAAAAJ&hl=en" target="_blank" rel="noopener">Publications</a>
         <a href="./demo.html" class="active">Interactive</a>
       </nav>
     </div>
@@ -295,40 +295,54 @@
     <div class="connection-box">
       <div class="label">Research Connection</div>
       <h3>From phase transitions to food market crises</h3>
-      <p>The Ising model describes a lattice of interacting elements — each in one of two states — that can collectively and suddenly flip from one ordered configuration to another. This phase transition is not caused by any single element: it emerges from the accumulated pressure of local interactions crossing a critical threshold.</p>
-      <p>This is the same mathematical intuition behind the CHSH and quantum decision-making work: food markets and human mobility systems exhibit analogous transitions from stability to crisis. Standard rational-actor models assume independent agents and smooth dynamics — they cannot detect the precursor signatures of these transitions. Quantum probability frameworks can, because they allow for the correlations and interference effects that characterize real decision-making under stress. The 29× difference in Bell violation ratios between crisis and non-crisis periods is precisely such a signature.</p>
+      <p>The Ising model describes a lattice of interacting elements — here, countries whose trade policies (open vs. closed) influence their neighbors. The system can collectively and suddenly flip from one ordered configuration to another: a phase transition. This is not caused by any single country — it emerges from accumulated local interactions crossing a critical threshold.</p>
+      <p>This is the same mathematical intuition behind the CHSH and quantum decision-making work: food markets and human mobility systems exhibit analogous transitions from stability to crisis. Standard rational-actor models assume independent agents and smooth dynamics — they cannot detect the precursor signatures of these transitions. Quantum probability frameworks can, because they allow for the superposition, tunneling, and entanglement effects that characterize real decision-making under stress. The 29× difference in Bell violation ratios between crisis and non-crisis periods is precisely such a signature.</p>
     </div>
 
     <!-- Three context cards -->
     <div class="context-grid">
       <div class="context-card">
-        <h3>What is the Ising model?</h3>
-        <p>A lattice of interacting spins (up or down) governed by nearest-neighbor coupling and temperature. Below a critical temperature, the system spontaneously orders. Above it, disorder dominates. The transition between these regimes is sharp — a phase transition.</p>
+        <h3>Classical Ising Model</h3>
+        <p>An 8×8 grid of countries, each with a definite trade policy (open or closed). Adjust coupling strength J (do countries prefer to coordinate or compete?) and external field h (institutional bias toward protectionism or liberalization). Watch energy minimize and policy clusters form.</p>
       </div>
       <div class="context-card gold">
-        <h3>What to explore in the demo</h3>
-        <p>Adjust temperature and coupling strength and watch the system flip between ordered and disordered phases. Notice how the transition is sudden and collective — no single element causes it. That emergent criticality is the key intuition.</p>
+        <h3>Quantum Ising Model</h3>
+        <p>The same framework extended with quantum superposition and tunneling. Countries can exist in mixed policy states. The tunneling rate Δ controls how rapidly policies shift — high Δ produces rapid, coherent transitions that the classical model cannot replicate. Compare both modes directly.</p>
       </div>
       <div class="context-card orange">
         <h3>Connection to food systems</h3>
-        <p>Food markets, trade networks, and evacuation decisions are all systems where many interacting agents can collectively and suddenly transition from stable to crisis behavior. The quantum extension (S3 framework) models the interference effects that arise when those decisions are not independent.</p>
+        <p>Trade policy cascades, food market crises, and evacuation decisions are all systems where many interacting agents collectively and suddenly transition from stable to crisis behavior. The quantum extension models the interference effects that arise when those decisions are not independent — which is exactly what crises produce.</p>
       </div>
     </div>
 
-    <!-- Demo iframe -->
-    <div class="demo-section">
+    <!-- Classical Demo -->
+    <div class="demo-section" style="margin-bottom:24px;">
       <div class="demo-header">
-        <h2>Quantum Ising Model — Interactive Visualization</h2>
-        <a href="https://github.com/mjpuma/Quantum_Ising" target="_blank" rel="noopener">View on GitHub →</a>
+        <h2>Classical Ising Model</h2>
+        <a href="https://github.com/mjpuma/Quantum_Ising/blob/main/classical_ising.html" target="_blank" rel="noopener">View source →</a>
       </div>
       <iframe
-        src="./quantum_ising_visualization.html"
+        src="./classical_ising.html"
+        class="demo-iframe"
+        title="Classical Ising Model Visualization"
+        loading="lazy">
+      </iframe>
+    </div>
+
+    <!-- Quantum Demo -->
+    <div class="demo-section">
+      <div class="demo-header" style="background:var(--purp);">
+        <h2>Quantum Ising Model</h2>
+        <a href="https://github.com/mjpuma/Quantum_Ising/blob/main/quantum_ising.html" target="_blank" rel="noopener">View source →</a>
+      </div>
+      <iframe
+        src="./quantum_ising.html"
         class="demo-iframe"
         title="Quantum Ising Model Visualization"
         loading="lazy">
       </iframe>
       <div class="demo-note">
-        If the visualization does not load, confirm that <code>quantum_ising_visualization.html</code> is in the same directory and that GitHub Pages has rebuilt after your last commit.
+        If either visualization does not load, confirm the HTML files are in the same directory and that GitHub Pages has rebuilt after your last commit.
       </div>
     </div>
 
