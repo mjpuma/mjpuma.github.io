@@ -72,6 +72,7 @@
       align-items: center;
       justify-content: space-between;
       gap: 16px;
+      flex-wrap: wrap;
     }
     .header-name {
       font-family: 'EB Garamond', serif;
@@ -156,10 +157,11 @@
     }
     .core-theme-box p {
       font-family: 'EB Garamond', serif;
-      font-size: 1.15rem;
-      line-height: 1.6;
-      color: rgba(255,255,255,0.92);
-      font-style: italic;
+      font-size: 1.3rem;        /* was 1.15rem */
+      line-height: 1.65;        /* was 1.6 */
+      color: rgba(255,255,255,0.95); /* slightly brighter */
+      font-style: normal;       /* removed italic */
+      font-weight: 400;
     }
     .hero-links { display: flex; gap: 10px; flex-wrap: wrap; }
     .btn-primary {
@@ -206,8 +208,8 @@
       line-height: 1;
       margin-bottom: 4px;
     }
-    .stat-label { font-size: 0.8rem; color: var(--cblu); font-weight: 500; }
-    .stat-sub { font-size: 0.72rem; color: rgba(155,203,235,0.6); margin-top: 2px; }
+    .stat-label { font-size: 0.85rem; color: var(--cblu); font-weight: 500; } /* was 0.8rem */
+    .stat-sub   { font-size: 0.78rem; color: rgba(155,203,235,0.6); margin-top: 2px; } /* was 0.72rem */
     .nature-banner {
       background: rgba(196,162,101,0.12);
       border: 1px solid rgba(196,162,101,0.35);
@@ -222,8 +224,8 @@
       font-weight: 600;
       line-height: 1;
     }
-    .nature-label { font-size: 0.8rem; color: var(--cblu); margin: 4px 0 8px; font-weight: 500; }
-    .nature-list { font-size: 0.7rem; color: rgba(155,203,235,0.65); line-height: 1.7; }
+    .nature-label { font-size: 0.85rem; color: var(--cblu); margin: 4px 0 8px; font-weight: 500; } /* was 0.8rem */
+    .nature-list  { font-size: 0.78rem; color: rgba(155,203,235,0.65); line-height: 1.7; }          /* was 0.7rem */
 
     /* ── MAIN ── */
     main { max-width: 1100px; margin: 0 auto; padding: 48px 24px; }
@@ -262,7 +264,7 @@
     .act-header {
       padding: 12px 16px;
       color: white;
-      font-size: 0.8rem;
+      font-size: 0.82rem;  /* was 0.8rem */
       font-weight: 600;
     }
     .act-header.act1 { background: var(--cblu); color: var(--navy); }
@@ -276,7 +278,7 @@
     .act-body .paper:last-child { border-bottom: none; padding-bottom: 0; }
     .paper-tag {
       display: inline-block;
-      font-size: 0.65rem;
+      font-size: 0.68rem;  /* was 0.65rem */
       font-weight: 600;
       color: var(--gry);
       background: var(--ice);
@@ -285,16 +287,16 @@
       margin-bottom: 5px;
     }
     .paper-title {
-      font-size: 0.875rem;
+      font-size: 0.9rem;   /* was 0.875rem */
       font-weight: 600;
       color: var(--navy);
-      margin-bottom: 3px;
+      margin-bottom: 4px;
       line-height: 1.35;
     }
     .paper-desc {
-      font-size: 0.8rem;
+      font-size: 0.875rem; /* was 0.8rem — key fix */
       color: var(--gry);
-      line-height: 1.45;
+      line-height: 1.5;    /* was 1.45 */
     }
 
     /* ── VENUES ── */
@@ -319,8 +321,8 @@
       margin-top: 5px;
       flex-shrink: 0;
     }
-    .venue-name { font-size: 0.875rem; font-weight: 600; color: var(--navy); }
-    .venue-note { font-size: 0.75rem; color: var(--gry); }
+    .venue-name { font-size: 0.9rem; font-weight: 600; color: var(--navy); }  /* was 0.875rem */
+    .venue-note { font-size: 0.8rem; color: var(--gry); }                      /* was 0.75rem */
 
     /* ── LEADERSHIP ── */
     .leadership-grid {
@@ -335,11 +337,11 @@
       border-radius: 6px;
       padding: 18px 20px;
     }
-    .role-card.gold { border-left-color: var(--gold); }
-    .role-card.purp { border-left-color: var(--purp); }
+    .role-card.gold   { border-left-color: var(--gold); }
+    .role-card.purp   { border-left-color: var(--purp); }
     .role-card.orange { border-left-color: var(--orange); }
     .role-title { font-size: 1rem; font-weight: 600; color: var(--navy); margin-bottom: 5px; }
-    .role-desc { font-size: 0.85rem; color: var(--gry); line-height: 1.5; }
+    .role-desc  { font-size: 0.9rem; color: var(--gry); line-height: 1.55; }  /* was 0.85rem */
 
     /* ── TEACHING ── */
     .teaching-grid {
@@ -355,8 +357,14 @@
       padding: 20px;
     }
     .course-name { font-size: 1rem; font-weight: 600; color: var(--navy); margin-bottom: 4px; }
-    .course-meta { font-size: 0.75rem; color: var(--gry); margin-bottom: 10px; font-style: italic; }
-    .course-desc { font-size: 0.85rem; color: var(--drk); line-height: 1.55; }
+    .course-meta {
+      font-size: 0.8rem;   /* was 0.75rem */
+      color: var(--gry);
+      margin-bottom: 10px;
+      font-style: normal;  /* removed italic */
+      font-weight: 500;
+    }
+    .course-desc { font-size: 0.9rem; color: var(--drk); line-height: 1.55; }  /* was 0.85rem */
 
     /* ── FOOTER ── */
     footer {
@@ -364,7 +372,7 @@
       color: rgba(155,203,235,0.8);
       text-align: center;
       padding: 36px 24px;
-      font-size: 0.85rem;
+      font-size: 0.88rem;   /* was 0.85rem */
       margin-top: 32px;
     }
     footer a { color: var(--cblu); text-decoration: none; }
@@ -376,6 +384,7 @@
       margin-bottom: 6px;
     }
 
+    /* ── RESPONSIVE ── */
     @media (max-width: 900px) {
       .hero-inner { grid-template-columns: 1fr; }
       .stats-sidebar { flex-direction: row; flex-wrap: wrap; }
@@ -384,8 +393,13 @@
       .leadership-grid, .teaching-grid { grid-template-columns: 1fr; }
     }
     @media (max-width: 600px) {
+      .hero { padding: 48px 16px 40px; }
       .hero h1 { font-size: 2.1rem; }
-      .header-inner { flex-direction: column; align-items: flex-start; gap: 10px; }
+      .hero-role { font-size: 0.9rem; }
+      .core-theme-box p { font-size: 1.15rem; }
+      .header-inner { flex-direction: column; align-items: flex-start; gap: 10px; padding: 12px 16px; }
+      main { padding: 32px 16px; }
+      nav a { font-size: 0.78rem; padding: 5px 10px; }
     }
 
     /* Fade-in animation */
@@ -603,13 +617,11 @@
   </footer>
 
   <script>
-    // Fade-in on scroll
     const observer = new IntersectionObserver(entries => {
       entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
     }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-    // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(a => {
       a.addEventListener('click', e => {
         e.preventDefault();
