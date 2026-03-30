@@ -24,7 +24,7 @@
       --lgry:  #D1E4F0;
     }
 
-    * { margin:0; padding:0; box-sizing:border-box; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: 'DM Sans', sans-serif;
@@ -49,7 +49,8 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 16px;
+      gap: 12px;
+      flex-wrap: wrap;
     }
     .header-name {
       font-family: 'EB Garamond', serif;
@@ -57,6 +58,7 @@
       font-weight: 600;
       color: white;
       text-decoration: none;
+      white-space: nowrap;
     }
     .header-name span { color: var(--cblu); }
     nav { display: flex; gap: 6px; flex-wrap: wrap; }
@@ -69,8 +71,9 @@
       border-radius: 20px;
       border: 1px solid rgba(155,203,235,0.3);
       transition: all 0.2s;
+      white-space: nowrap;
     }
-    nav a:hover { background: rgba(155,203,235,0.15); color: white; border-color: var(--cblu); }
+    nav a:hover  { background: rgba(155,203,235,0.15); color: white; border-color: var(--cblu); }
     nav a.active { background: rgba(155,203,235,0.15); color: white; border-color: var(--cblu); }
 
     /* ── HERO ── */
@@ -101,6 +104,7 @@
       max-width: 640px;
       margin-bottom: 24px;
     }
+    .btn-row { display: flex; gap: 10px; flex-wrap: wrap; }
     .btn-primary {
       background: var(--gold);
       color: var(--navy);
@@ -111,7 +115,6 @@
       font-size: 0.875rem;
       transition: all 0.2s;
       display: inline-block;
-      margin-right: 10px;
     }
     .btn-primary:hover { background: #d4b275; transform: translateY(-1px); }
     .btn-outline {
@@ -128,87 +131,9 @@
     .btn-outline:hover { background: rgba(155,203,235,0.1); border-color: var(--cblu); }
 
     /* ── MAIN ── */
-    main { max-width: 1100px; margin: 0 auto; padding: 40px 24px; }
+    main { max-width: 1100px; margin: 0 auto; padding: 36px 24px; }
 
-    /* Context cards */
-    .context-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-      margin-bottom: 36px;
-    }
-    .context-card {
-      background: white;
-      border: 1px solid var(--lgry);
-      border-top: 3px solid var(--cblu);
-      border-radius: 6px;
-      padding: 20px;
-    }
-    .context-card.gold { border-top-color: var(--gold); }
-    .context-card.orange { border-top-color: var(--orange); }
-    .context-card h3 {
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: var(--navy);
-      margin-bottom: 8px;
-    }
-    .context-card p { font-size: 0.83rem; color: var(--gry); line-height: 1.55; }
-
-    /* Demo frame */
-    .demo-section {
-      background: white;
-      border: 1px solid var(--lgry);
-      border-radius: 8px;
-      overflow: hidden;
-      margin-bottom: 28px;
-    }
-    .demo-header {
-      background: var(--navy);
-      padding: 16px 22px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-    }
-    .demo-header h2 {
-      font-family: 'EB Garamond', serif;
-      font-size: 1.3rem;
-      font-weight: 400;
-      color: white;
-    }
-    .demo-header a {
-      font-size: 0.8rem;
-      color: var(--cblu);
-      text-decoration: none;
-      border: 1px solid rgba(155,203,235,0.4);
-      padding: 5px 12px;
-      border-radius: 20px;
-      white-space: nowrap;
-      transition: all 0.2s;
-    }
-    .demo-header a:hover { background: rgba(155,203,235,0.15); }
-    .demo-iframe {
-      width: 100%;
-      height: 660px;
-      border: none;
-      display: block;
-      background: white;
-    }
-    .demo-note {
-      padding: 14px 22px;
-      background: var(--ice);
-      border-top: 1px solid var(--lgry);
-      font-size: 0.8rem;
-      color: var(--gry);
-    }
-    .demo-note code {
-      background: var(--lgry);
-      padding: 1px 5px;
-      border-radius: 3px;
-      font-size: 0.85em;
-    }
-
-    /* Research connection */
+    /* Research connection box */
     .connection-box {
       background: var(--navy);
       color: white;
@@ -236,9 +161,116 @@
       font-size: 0.9rem;
       color: rgba(155,203,235,0.85);
       line-height: 1.65;
-      max-width: 800px;
+      max-width: 820px;
     }
     .connection-box p + p { margin-top: 10px; }
+
+    /* Context cards */
+    .context-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+    .context-card {
+      background: white;
+      border: 1px solid var(--lgry);
+      border-top: 3px solid var(--cblu);
+      border-radius: 6px;
+      padding: 20px;
+    }
+    .context-card.gold   { border-top-color: var(--gold); }
+    .context-card.orange { border-top-color: var(--orange); }
+    .context-card h3 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+    .context-card p { font-size: 0.83rem; color: var(--gry); line-height: 1.55; }
+
+    /* Demo frame */
+    .demo-section {
+      background: white;
+      border: 1px solid var(--lgry);
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 28px;
+    }
+    .demo-header {
+      background: var(--navy);
+      padding: 16px 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .demo-header h2 {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 400;
+      color: white;
+    }
+    .demo-header a {
+      font-size: 0.8rem;
+      color: var(--cblu);
+      text-decoration: none;
+      border: 1px solid rgba(155,203,235,0.4);
+      padding: 5px 12px;
+      border-radius: 20px;
+      white-space: nowrap;
+      transition: all 0.2s;
+    }
+    .demo-header a:hover { background: rgba(155,203,235,0.15); }
+
+    /* Desktop iframe */
+    .demo-iframe {
+      width: 100%;
+      height: 760px;
+      border: none;
+      display: block;
+      background: white;
+    }
+
+    /* Mobile fallback — link instead of iframe */
+    .demo-mobile-fallback {
+      display: none;
+      padding: 28px 22px;
+      text-align: center;
+    }
+    .demo-mobile-fallback p {
+      font-size: 0.9rem;
+      color: var(--gry);
+      margin-bottom: 18px;
+      line-height: 1.6;
+    }
+    .demo-mobile-fallback a {
+      background: var(--navy);
+      color: white;
+      padding: 12px 28px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      display: inline-block;
+      transition: background 0.2s;
+    }
+    .demo-mobile-fallback a:hover { background: #0D2B4E; }
+
+    .demo-note {
+      padding: 14px 22px;
+      background: var(--ice);
+      border-top: 1px solid var(--lgry);
+      font-size: 0.8rem;
+      color: var(--gry);
+    }
+    .demo-note code {
+      background: var(--lgry);
+      padding: 1px 5px;
+      border-radius: 3px;
+      font-size: 0.85em;
+    }
 
     /* Footer */
     footer {
@@ -258,11 +290,38 @@
       margin-bottom: 5px;
     }
 
-    @media (max-width: 768px) {
+    /* ── RESPONSIVE ── */
+
+    /* Tablet */
+    @media (max-width: 900px) {
+      .context-grid { grid-template-columns: 1fr 1fr; }
+      .context-card:last-child { grid-column: 1 / -1; }
+      .hero h1 { font-size: 2rem; }
+      .demo-iframe { height: 680px; }
+      .connection-box { padding: 22px 24px; }
+    }
+
+    /* Phone */
+    @media (max-width: 600px) {
+      .hero { padding: 36px 16px 32px; }
+      .hero h1 { font-size: 1.65rem; }
+      .hero p { font-size: 0.92rem; }
+      main { padding: 24px 16px; }
       .context-grid { grid-template-columns: 1fr; }
-      .hero h1 { font-size: 1.8rem; }
-      .demo-iframe { height: 520px; }
-      .header-inner { flex-direction: column; align-items: flex-start; }
+      .context-card:last-child { grid-column: auto; }
+      .connection-box { padding: 20px 18px; }
+      .connection-box h3 { font-size: 1.2rem; }
+
+      /* On phones, swap iframe for a direct link */
+      .demo-iframe { display: none; }
+      .demo-mobile-fallback { display: block; }
+
+      .demo-header { flex-direction: column; align-items: flex-start; gap: 8px; }
+      .demo-header h2 { font-size: 1.1rem; }
+      .demo-note { font-size: 0.75rem; }
+      footer { font-size: 0.8rem; }
+      .header-inner { padding: 12px 16px; }
+      nav a { font-size: 0.78rem; padding: 5px 10px; }
     }
   </style>
 </head>
@@ -284,8 +343,10 @@
       <div class="hero-label">Interactive Visualization</div>
       <h1>Quantum Ising Model</h1>
       <p>An interactive exploration of phase transitions and emergent behavior — and how the same mathematical structure underlies decision-making in food markets under systemic stress.</p>
-      <a href="./index.html" class="btn-primary">← Back to Home</a>
-      <a href="https://github.com/mjpuma/Quantum_Ising" class="btn-outline" target="_blank" rel="noopener">View Source Code</a>
+      <div class="btn-row">
+        <a href="./index.html" class="btn-primary">← Back to Home</a>
+        <a href="https://github.com/mjpuma/Quantum_Ising" class="btn-outline" target="_blank" rel="noopener">View Source Code</a>
+      </div>
     </div>
   </section>
 
@@ -295,39 +356,49 @@
     <div class="connection-box">
       <div class="label">Research Connection</div>
       <h3>From phase transitions to food market crises</h3>
-      <p>The Ising model describes a lattice of interacting elements — here, countries whose trade policies (open vs. closed) influence their neighbors. The system can collectively and suddenly flip from one ordered configuration to another: a phase transition. This is not caused by any single country — it emerges from accumulated local interactions crossing a critical threshold.</p>
-      <p>This is the same mathematical intuition behind the CHSH and quantum decision-making work: food markets and human mobility systems exhibit analogous transitions from stability to crisis. Standard rational-actor models assume independent agents and smooth dynamics — they cannot detect the precursor signatures of these transitions. Quantum probability frameworks can, because they allow for the superposition, tunneling, and entanglement effects that characterize real decision-making under stress. The 29× difference in Bell violation ratios between crisis and non-crisis periods is precisely such a signature.</p>
+      <p>The Ising model describes a lattice of interacting elements — here, 16 countries arranged on a 4×4 grid whose trade policies (open vs. closed) influence their neighbors. The lattice uses periodic boundary conditions: the top row connects to the bottom, the left column connects to the right, forming a torus. This means every country has exactly four neighbors and there are no edge effects — every node sits in an equivalent position, just as in the global trade network where no major trader sits at a periphery.</p>
+      <p>When local interactions accumulate past a critical threshold, the whole system can collectively and suddenly flip from one ordered configuration to another: a phase transition. This is the same mathematical intuition behind the CHSH and quantum decision-making work. Food markets and human mobility systems exhibit analogous transitions from stability to crisis. Standard rational-actor models assume independent agents and smooth dynamics — they miss the precursor signatures of these transitions. Quantum probability frameworks can detect them, because they allow for superposition, tunneling, and interference effects that characterize real decision-making under stress. The 29× difference in Bell violation ratios between crisis and non-crisis periods is precisely such a signature.</p>
     </div>
 
     <!-- Three context cards -->
     <div class="context-grid">
       <div class="context-card">
         <h3>Classical Ising Model</h3>
-        <p>An 8×8 grid of countries, each with a definite trade policy (open or closed). Adjust coupling strength J (do countries prefer to coordinate or compete?) and external field h (institutional bias toward protectionism or liberalization). Watch energy minimize and policy clusters form.</p>
+        <p>16 countries on a 4×4 torus, each with a definite trade policy — open (−1) or closed (+1). Periodic boundary conditions eliminate edge effects: every country has exactly four neighbors. Adjust coupling J (do countries prefer to coordinate or compete?) and external field h (institutional bias toward protectionism or liberalization). Watch energy minimize and policy clusters form.</p>
       </div>
       <div class="context-card gold">
         <h3>Quantum Ising Model</h3>
-        <p>The same framework extended with quantum superposition and tunneling. Countries exist in mixed policy states simultaneously. Adjust the tunneling rate Δ to control how rapidly policies shift. Hit <strong>Measure</strong> to collapse all superpositions to definite states — the quantum analog of a market clearing or crisis resolution, when uncertainty suddenly resolves into a new order.</p>
+        <p>The same 4×4 torus extended with quantum superposition and tunneling. Countries exist in mixed policy states simultaneously — neither fully open nor fully closed. Neighbor coupling J and tunneling rate Δ compete: strong J locks in ordered clusters, strong Δ keeps countries in superposition. Hit <strong>Measure</strong> to collapse all superpositions to definite states — the quantum analog of a crisis resolution, when uncertainty suddenly resolves into a new order.</p>
       </div>
       <div class="context-card orange">
         <h3>Connection to food systems</h3>
-        <p>Trade policy cascades, food market crises, and evacuation decisions are all systems where many interacting agents collectively and suddenly transition from stable to crisis behavior. The quantum extension models the interference effects that arise when those decisions are not independent — which is exactly what crises produce.</p>
+        <p>Trade policy cascades, food market crises, and evacuation decisions are all systems where many interacting agents collectively and suddenly transition from stable to crisis behavior. The 2D lattice with periodic boundaries captures the closed, interdependent structure of the global food network. The quantum extension models the interference effects that arise when decisions are not independent — which is exactly what crises produce.</p>
       </div>
     </div>
 
     <!-- Demo -->
     <div class="demo-section">
       <div class="demo-header">
-        <h2>Classical &amp; Quantum Ising Model — Interactive Visualization</h2>
+        <h2>Classical &amp; Quantum Ising — Interactive Visualization</h2>
         <a href="https://github.com/mjpuma/Quantum_Ising" target="_blank" rel="noopener">View on GitHub →</a>
       </div>
+
+      <!-- Desktop: embedded iframe -->
       <iframe
         src="./quantum_ising_visualization.html"
         class="demo-iframe"
         title="Classical and Quantum Ising Model Visualization"
         loading="lazy">
       </iframe>
+
+      <!-- Phone: direct link (iframe too small to be usable) -->
+      <div class="demo-mobile-fallback">
+        <p>The interactive model works best on a larger screen. Tap below to open it directly in your browser — it is fully functional on mobile.</p>
+        <a href="./quantum_ising_visualization.html">Open Interactive Model →</a>
+      </div>
+
       <div class="demo-note">
+        <strong>Desktop:</strong> embedded above. <strong>Phone:</strong> tap the link above to open full-screen. &nbsp;|&nbsp;
         If the visualization does not load, confirm <code>quantum_ising_visualization.html</code> is in the same directory and that GitHub Pages has rebuilt after your last commit.
       </div>
     </div>
