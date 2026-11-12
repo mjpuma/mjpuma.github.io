@@ -104,31 +104,44 @@
   <p>My family's roots in <strong>Castellammare del Golfo, Sicily</strong>, and <strong>Ireland</strong> are part of what drew me to the study of food insecurity, migration, and refugees. These histories make the relationship between hunger, political conditions, and human mobility more than an abstract research question.</p>
   <p>For generations, Sicily experienced foreign rule, political upheaval, and persistent economic inequality, conditions that helped drive emigration in the late nineteenth and early twentieth centuries. On my Irish side, much of my family's migration history reaches back to the era of the <strong>Great Irish Famine (1845–1852)</strong>, when crop failure, poverty, and political and institutional failures forced enormous numbers of people to leave. Both histories connect to New York, where migration reshaped families and communities.</p>
   <figure class="heritage-map">
-    <svg viewBox="0 0 920 390" role="img" aria-labelledby="migration-map-title migration-map-desc" xmlns="http://www.w3.org/2000/svg">
-      <title id="migration-map-title">Illustrative migration pathways from Ireland and western Sicily to New York</title>
-      <desc id="migration-map-desc">A schematic Atlantic diagram with arrows from Ireland in the mid-nineteenth century and Castellammare del Golfo in the late nineteenth to early twentieth century, both toward New York City. Not a reconstruction of individual family journeys.</desc>
-      <defs><marker id="migration-arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0 L9 3 L0 6 Z" fill="#003865"/></marker></defs>
-      <rect width="920" height="390" rx="7" fill="#EBF4FB"/>
-      <path d="M0 0H180L157 42L180 84L153 126L188 162L163 210L193 260L151 306L167 390H0Z" fill="#d4e2d7" stroke="#b3cdbb" stroke-width="1.5"/>
-      <path d="M600 0H920V390H681L664 348L701 305L667 260L710 208L681 163L710 120L660 77Z" fill="#d4e2d7" stroke="#b3cdbb" stroke-width="1.5"/>
-      <path d="M597 68Q580 89 587 112Q604 122 617 105L617 78Z" fill="#b9d2b8" stroke="#7ea488"/>
-      <path d="M727 232Q754 224 767 236L744 251L720 246Z" fill="#b9d2b8" stroke="#7ea488"/>
-      <text x="380" y="365" fill="#8caec5" font-size="21" font-family="Georgia,serif" letter-spacing="5">ATLANTIC OCEAN</text>
-      <text x="18" y="40" fill="#496452" font-size="15" font-weight="600" font-family="Arial,sans-serif">NORTH AMERICA</text>
-      <text x="759" y="42" fill="#496452" font-size="15" font-weight="600" font-family="Arial,sans-serif">EUROPE</text>
-      <path d="M590 99Q397 23 161 157" fill="none" stroke="#003865" stroke-width="4" stroke-dasharray="10 7" marker-end="url(#migration-arrow)"/>
-      <path d="M738 242Q421 330 161 157" fill="none" stroke="#C4A265" stroke-width="4" stroke-dasharray="10 7" marker-end="url(#migration-arrow)"/>
-      <circle cx="161" cy="157" r="7" fill="#003865"/><circle cx="590" cy="99" r="7" fill="#003865"/><circle cx="738" cy="242" r="7" fill="#C4A265"/>
-      <text x="24" y="184" fill="#003865" font-size="19" font-weight="700" font-family="Arial,sans-serif">New York City</text>
-      <text x="23" y="207" fill="#536a7d" font-size="14" font-family="Arial,sans-serif">Destination</text>
-      <text x="604" y="72" fill="#003865" font-size="19" font-weight="700" font-family="Arial,sans-serif">Ireland</text>
-      <text x="369" y="76" fill="#003865" font-size="14" font-weight="600" font-family="Arial,sans-serif">Mid-1800s</text>
-      <text x="719" y="274" fill="#6c5226" font-size="17" font-weight="700" font-family="Arial,sans-serif" text-anchor="middle">Castellammare</text>
-      <text x="719" y="295" fill="#6c5226" font-size="17" font-weight="700" font-family="Arial,sans-serif" text-anchor="middle">del Golfo, Sicily</text>
-      <text x="392" y="278" fill="#806536" font-size="14" font-weight="600" font-family="Arial,sans-serif">Late 1800s–early 1900s</text>
-    </svg>
-    <figcaption><strong>Two family migration histories, one destination.</strong> Schematic pathways across the Atlantic, showing broad periods of Irish and Sicilian migration to New York. Routes are illustrative, not documented itineraries of individual ancestors.</figcaption>
-  </figure>
+<svg viewBox="0 0 1000 550" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="maptitle mapdesc">
+<title id="maptitle">Across the Atlantic: Ireland and Sicily to New York</title><desc id="mapdesc">An illustrated vintage-style map of the North Atlantic showing approximate migration routes from Ireland during the Great Famine and Castellammare del Golfo in Sicily during the late nineteenth and early twentieth centuries to New York City.</desc>
+<defs>
+<linearGradient id="sea" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#153c57"/><stop offset="1" stop-color="#315f74"/></linearGradient>
+<pattern id="waves" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M0 20 Q8 15 16 20T32 20" fill="none" stroke="#b5c5b8" stroke-opacity=".10" stroke-width="1"/></pattern>
+<filter id="shadow"><feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity=".22"/></filter>
+<marker id="greenArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#a7d5a1"/></marker>
+<marker id="goldArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#f2c76f"/></marker>
+</defs>
+<rect width="1000" height="550" fill="url(#sea)"/><rect width="1000" height="550" fill="url(#waves)"/>
+<g fill="#d6c8a9" stroke="#a8a38d" stroke-width="1.6">
+<!-- North American eastern coastline, generalized -->
+<path d="M0 0H230L235 27 220 42 230 65 214 89 227 105 205 123 211 148 197 172 201 197 182 215 180 232 160 245 166 264 152 281 160 296 144 313 150 330 136 350 140 374 125 391 119 413 107 431 101 455 86 470 80 493 62 511 60 550H0Z"/>
+<!-- Iberia and France, Western Europe -->
+<path d="M771 0H1000V550H825L815 526 828 502 806 480 800 457 777 435 791 413 770 389 787 369 764 350 778 329 758 305 772 289 748 266 752 241 732 226 744 205 733 188 746 171 734 153 755 130 740 107 753 87 745 65 764 45Z"/>
+<!-- British Isles -->
+<path d="M730 76l-13 17 4 19-13 18 4 19-10 19 12 14-2 20 18 4 12-20-6-17 9-18-4-20 6-20-9-16z"/>
+<path d="M676 115l-15 11-6 18-9 16 9 13-8 16 12 15 18-4 13-19-6-15 9-15-8-15z"/>
+<!-- Italy boot schematic -->
+<path d="M822 338l24 4 16 15 12 24 25 16 19 29-9 11-18-17-20-8-15-26-16-9-18-16z"/>
+<!-- Sicily -->
+<path d="M825 435l37-6 15 9-25 12-23-5z"/>
+</g>
+<g fill="#a7b59b" opacity=".42"><path d="M0 0H230L235 27 220 42 230 65 214 89 227 105 205 123 211 148 197 172 201 197 182 215 180 232 160 245 166 264 152 281 160 296 144 313 150 330 136 350 140 374 125 391 119 413 107 431 101 455 86 470 80 493 62 511 60 550H0Z"/><path d="M771 0H1000V550H825L815 526 828 502 806 480 800 457 777 435 791 413 770 389 787 369 764 350 778 329 758 305 772 289 748 266 752 241 732 226 744 205 733 188 746 171 734 153 755 130 740 107 753 87 745 65 764 45Z"/></g>
+<text x="42" y="50" fill="#fff2d9" font-family="Georgia,serif" font-size="36" letter-spacing="1.5">Across the Atlantic</text>
+<text x="44" y="80" fill="#d8e5e5" font-family="Georgia,serif" font-size="17" font-style="italic">Family migration to New York · 19th–early 20th century</text>
+<path d="M44 95H454" stroke="#c9a568" stroke-width="2"/>
+<text x="426" y="326" fill="#a9c6ce" font-family="Georgia,serif" font-size="25" font-style="italic" letter-spacing="7" opacity=".65" text-anchor="middle">ATLANTIC OCEAN</text>
+<path d="M663 165C520 120 340 150 152 293" fill="none" stroke="#a7d5a1" stroke-width="4" stroke-linecap="round" marker-end="url(#greenArrow)"/>
+<path d="M842 440C620 490 362 450 152 293" fill="none" stroke="#f2c76f" stroke-width="4" stroke-linecap="round" marker-end="url(#goldArrow)"/>
+<g filter="url(#shadow)"><circle cx="152" cy="293" r="7" fill="#eec58a" stroke="#fff" stroke-width="2"/><circle cx="663" cy="165" r="6" fill="#a7d5a1" stroke="#fff" stroke-width="2"/><circle cx="842" cy="440" r="6" fill="#f2c76f" stroke="#fff" stroke-width="2"/></g>
+<g font-family="Georgia,serif" fill="#fff6df"><text x="44" y="271" font-size="22" font-weight="bold">New York</text><text x="44" y="291" font-size="14">City</text><text x="609" y="127" font-size="21">Ireland</text><text x="675" y="390" font-size="18">Castellammare</text><text x="675" y="411" font-size="18">del Golfo, Sicily</text></g>
+<g font-family="Georgia,serif" font-style="italic" font-size="17"><text x="338" y="147" fill="#c4e6bc">Ireland · mid-1800s</text><text x="359" y="467" fill="#ffe0a1">Sicily · late 1800s–early 1900s</text></g>
+<rect x="33" y="493" width="930" height="40" rx="3" fill="#112f43" fill-opacity=".86"/>
+<text x="49" y="519" fill="#e7e0d0" font-family="Georgia,serif" font-size="15">Irish Great Famine (1845–1852)  ·  Sicilian emigration amid political and economic hardship</text>
+</svg>
+<figcaption><strong>Two family migration histories, one destination.</strong> Vintage-style interpretive map of broad Irish and Sicilian migration to New York. Routes and coastlines are schematic, not documented family itineraries or navigational geography.</figcaption>
+</figure>
   <p>New York's <a href="https://bpca.ny.gov/place/irish-hunger-memorial/" target="_blank" rel="noopener">Irish Hunger Memorial</a> in Battery Park City commemorates the Great Famine and explicitly connects that history to hunger in the world today. It is a powerful reminder of why the past remains relevant to contemporary food-security research.</p>
   <p>My <strong>Sicilian-American flag project</strong> is another way of exploring this heritage through design, symbolism, and the experience of building a new identity across generations.</p>
   <div class="heritage-links"><a href="https://mjpuma.github.io/sicilian-american-flag/" target="_blank" rel="noopener">Explore the Sicilian-American Flag</a><a href="https://bpca.ny.gov/place/irish-hunger-memorial/" target="_blank" rel="noopener">Visit the Irish Hunger Memorial</a></div>
