@@ -415,7 +415,8 @@
     .creative-feature p a { color:var(--navy); font-weight:600; text-underline-offset:3px; }
     /* Scholar’s Lion miniature in shared site banner */
     .header-name { display:inline-flex; align-items:center; gap:10px; }
-    .header-lion { display:block; width:38px; height:32px; object-fit:cover; object-position:center 42%; border:1px solid rgba(255,255,255,.5); border-radius:3px; flex-shrink:0; }
+    .header-lion-crop { display:block; position:relative; width:38px; height:32px; overflow:hidden; border:1px solid rgba(255,255,255,.5); border-radius:3px; flex-shrink:0; }
+    .header-lion { position:absolute; width:61px; height:auto; max-width:none; left:-12px; top:-3px; display:block; }
 </style>
 </head>
 <body>
@@ -423,7 +424,7 @@
   <!-- HEADER -->
   <header class="site-header">
     <div class="header-inner">
-      <a href="./index.html" class="header-name"><img class="header-lion" src="./assets/creative/scholars-lion-winter.jpg" alt="Scholar’s Lion in Winter poster" width="38" height="32">Michael J. Puma <span>· Columbia</span></a>
+      <a href="./index.html" class="header-name"><span class="header-lion-crop"><img class="header-lion" src="./assets/creative/scholars-lion-winter.jpg" alt="Scholar’s Lion" width="61" height="48"></span>Michael J. Puma <span>· Columbia</span></a>
       <nav>
         <a href="https://people.climate.columbia.edu/users/profile/michael-joseph-puma" target="_blank" rel="noopener">Columbia Profile</a>
         <a href="https://scholar.google.com/citations?user=L4T5olUAAAAJ&hl=en" target="_blank" rel="noopener">Publications</a>
