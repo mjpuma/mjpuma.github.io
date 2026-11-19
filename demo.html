@@ -345,12 +345,12 @@
 
   <section class="hero">
     <div class="hero-inner">
-      <div class="hero-label">Interactive Visualization</div>
-      <h1>Quantum Ising Model</h1>
-      <p>An interactive exploration of phase transitions and emergent behavior — and how the same mathematical structure underlies decision-making in food markets under systemic stress.</p>
+      <div class="hero-label">Interactive Decision Laboratory</div>
+      <h1>Decisions Under Uncertainty</h1>
+      <p>Two interactive games exploring question-order effects and strategic food-trade decisions, with optional mathematical explanations and clearly stated limitations.</p>
       <div class="btn-row">
         <a href="./index.html" class="btn-primary">← Back to Home</a>
-        <a href="https://github.com/mjpuma/Quantum_Ising" class="btn-outline" target="_blank" rel="noopener">View Source Code</a>
+        <a href="https://github.com/mjpuma/mjpuma.github.io/blob/master/demo.html" class="btn-outline" target="_blank" rel="noopener">View Source Code</a>
       </div>
     </div>
   </section>
@@ -358,17 +358,17 @@
   <main>
 <div class="connection-box"><div class="label">Interactive decision laboratory</div><h3>Decisions under uncertainty</h3><p>Two educational games explore context-dependent judgments and strategic choices during hypothetical food-supply disruptions. Classical models provide a baseline; quantum probability offers a possible mathematical framework for certain context effects. These are illustrations, not empirical findings or crisis forecasts.</p></div>
 <div class="game-tabs"><button class="game-tab active" id="tab-order" onclick="show('order')">1 · The Order Matters</button><button class="game-tab" id="tab-trade" onclick="show('trade')">2 · The Trade Dilemma</button></div>
-<section class="game-card" id="game-order"><div class="label-small">Question order · Context · Probability</div><h2>The Order Matters</h2><p>You are advising a government during a grain shortage. Answer two questions, then reverse their order. This is an individual demonstration, not a randomized survey.</p>
+<section class="game-card" id="game-order"><div class="label-small">Question order · Context · Probability</div><h2>The Order Matters</h2><p>You are advising a government during a grain shortage. Answer two questions, then reverse their order. Explore a hypothetical mathematical prediction below. This is not a randomized survey.</p>
 <div class="controls-row"><button class="choice active" id="ab" onclick="setOrder('AB')">Food security first</button><button class="choice" id="ba" onclick="setOrder('BA')">Trade first</button><button class="choice" onclick="resetOrder()">Reset</button></div>
 <div class="question-box"><small id="step"></small><h3 id="question"></h3><div id="answers"><button onclick="answer('Yes')">Yes</button><button onclick="answer('No')">No</button></div><div class="result" id="order-result" aria-live="polite"></div></div>
-<details class="math-panel"><summary>Explore the mathematics</summary><p>Quantum-probability models can represent binary questions by projectors P<sub>A</sub> and P<sub>B</sub>. The sequential probability <code>||P_B P_A |ψ⟩||²</code> can differ from <code>||P_A P_B |ψ⟩||²</code> when the projectors do not commute. This is a mathematical modeling possibility, not evidence of physical quantum cognition.</p><p>Classical context-sensitive models can also produce order effects. Discriminating models requires data and specific testable predictions, such as the QQ equality.</p><p><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4084470/" target="_blank" rel="noopener">Wang et al. (2014), PNAS</a></p></details></section>
+<div class="question-box" style="margin-top:16px"><h3>Illustrative quantum-probability model</h3><p>Vary the angle between two question projectors. The initial state is defined as “Yes” to question A. These are hypothetical mathematical probabilities, not observations or predictions of your responses.</p><label for="angle">Angle: <strong id="angle-value">45°</strong></label><input id="angle" type="range" min="0" max="90" value="45" oninput="renderModel()" style="display:block;width:100%;max-width:500px;margin:12px 0;accent-color:var(--navy)"><div class="result" id="model-result" aria-live="polite"></div></div><details class="math-panel"><summary>Explore the mathematics</summary><p>Quantum-probability models can represent binary questions by projectors P<sub>A</sub> and P<sub>B</sub>. The sequential probability <code>||P_B P_A |ψ⟩||²</code> can differ from <code>||P_A P_B |ψ⟩||²</code> when the projectors do not commute. This is a mathematical modeling possibility, not evidence of physical quantum cognition.</p><p>Classical context-sensitive models can also produce order effects. Discriminating models requires data and specific testable predictions, such as the QQ equality.</p><p><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4084470/" target="_blank" rel="noopener">Wang et al. (2014), PNAS</a></p></details></section>
 <section class="game-card" id="game-trade" hidden><div class="label-small">Strategic decisions · Game theory</div><h2>The Trade Dilemma</h2><p>Two hypothetical grain-exporting countries face a shortage. Each can maintain exports or restrict them. Choose Country A's action and adjust your belief about Country B's behavior.</p>
 <div class="controls-row"><strong>Country A:</strong><button class="choice active" id="maintain" onclick="choose('M')">Maintain exports</button><button class="choice" id="restrict" onclick="choose('R')">Restrict exports</button></div>
 <label for="belief">Probability Country B restricts: <strong id="belief-value">50%</strong></label><input type="range" id="belief" min="0" max="100" value="50" oninput="renderTrade()">
-<div class="table-scroll"><table class="payoff"><caption>Illustrative payoffs (Country A, Country B); higher is better</caption><thead><tr><th rowspan="2">Country A</th><th colspan="2">Country B</th></tr><tr><th>Maintain</th><th>Restrict</th></tr></thead><tbody><tr id="row-m"><th>Maintain</th><td>(3, 3)</td><td>(0, 4)</td></tr><tr id="row-r"><th>Restrict</th><td>(4, 0)</td><td>(1, 1)</td></tr></tbody></table></div>
+<label for="cost">Hypothetical extra cost of restricting exports: <strong id="cost-value">0.00</strong> payoff units</label><input id="cost" type="range" min="0" max="4" step="0.25" value="0" oninput="renderTrade()" style="display:block;width:100%;max-width:500px;margin:12px 0;accent-color:var(--navy)"><div class="table-scroll"><table class="payoff"><caption>Baseline illustrative payoffs (A, B); higher is better. The adjustable cost modifies only A’s restricting payoffs.</caption><thead><tr><th rowspan="2">Country A</th><th colspan="2">Country B</th></tr><tr><th>Maintain</th><th>Restrict</th></tr></thead><tbody><tr id="row-m"><th>Maintain</th><td>(3, 3)</td><td>(0, 4)</td></tr><tr id="row-r"><th>Restrict</th><td>(4, 0)</td><td>(1, 1)</td></tr></tbody></table></div>
 <div class="result" id="trade-result" aria-live="polite"></div>
-<details class="math-panel"><summary>Explore the mathematics</summary><p><strong>Classical baseline:</strong> If p is the probability that B restricts, then Country A's expected payoffs are <code>U(M) = 3(1−p)</code> and <code>U(R) = 4(1−p) + p</code>. Restriction is strictly dominant in this illustrative matrix, and (Restrict, Restrict) is its Nash equilibrium. These numbers are not calibrated to real countries.</p><p><strong>Quantum-probability opportunity:</strong> One could investigate whether contextual representations of beliefs and sequential judgments yield testable improvements over classical behavioral models. This game does not compute quantum equilibria, entanglement, or quantum advantage.</p><p><a href="https://doi.org/10.1016/j.jmp.2015.11.005" target="_blank" rel="noopener">Yearsley &amp; Busemeyer (2016), quantum cognition tutorial</a></p></details></section>
-<p class="scope"><strong>Scope:</strong> Illustrative educational games only. No responses are collected, transmitted, or saved. Neither game implies physical quantum effects in brains or validated predictions of food-market crises.</p>
+<details class="math-panel"><summary>Explore the mathematics</summary><p><strong>Classical baseline:</strong> If p is the probability that B restricts, then Country A's expected payoffs are <code>U(M) = 3(1−p)</code> and <code>U(R) = 4(1−p) + p</code>. At zero extra cost, restriction is strictly dominant in the baseline matrix and (Restrict, Restrict) is its Nash equilibrium. With an extra cost, the displayed matrix is no longer the full adjusted game; the calculator varies A’s incentives only. These numbers are not calibrated to real countries.</p><p><strong>Quantum-probability opportunity:</strong> One could investigate whether contextual representations of beliefs and sequential judgments yield testable improvements over classical behavioral models. This game does not compute quantum equilibria, entanglement, or quantum advantage.</p><p><a href="https://doi.org/10.1016/j.jmp.2015.11.005" target="_blank" rel="noopener">Yearsley &amp; Busemeyer (2016), quantum cognition tutorial</a></p></details></section>
+<p class="scope"><strong>Scope:</strong> Illustrative educational games only. The games do not intentionally transmit or store responses; ordinary website hosting and third-party services may process connection data. Neither game implies physical quantum effects in brains or validated predictions of food-market crises.</p>
 </main>
 
   <footer>
@@ -391,7 +391,26 @@ function resetOrder(){responses=[];renderOrder()}
 function answer(x){if(responses.length<2){responses.push(x);renderOrder()}}
 function renderOrder(){const n=responses.length;document.getElementById('step').textContent=n===2?'Complete':'Question '+(n+1)+' of 2';document.getElementById('question').textContent=n<2?questions[order[n]]:'Your answers';document.getElementById('answers').hidden=n===2;document.getElementById('order-result').innerHTML=n===2?'<strong>Responses:</strong> '+order.split('').map((x,i)=>(x==='A'?'Food security':'Trade')+': '+responses[i]).join('; ')+'<p>Try reversing the order. One person answering twice cannot establish an order effect; repetition may also influence responses.</p>':''}
 function choose(x){action=x;renderTrade()}
-function renderTrade(){const p=Number(document.getElementById('belief').value)/100,m=3*(1-p),r=4*(1-p)+p;document.getElementById('belief-value').textContent=Math.round(p*100)+'%';document.getElementById('maintain').classList.toggle('active',action==='M');document.getElementById('restrict').classList.toggle('active',action==='R');document.getElementById('row-m').classList.toggle('selected',action==='M');document.getElementById('row-r').classList.toggle('selected',action==='R');document.getElementById('trade-result').innerHTML='<strong>Expected payoff for A:</strong> Maintain '+m.toFixed(2)+'; Restrict '+r.toFixed(2)+'. <strong>Your choice:</strong> '+(action==='M'?'Maintain':'Restrict')+'. In this payoff matrix restriction has the higher payoff at every belief level, even though mutual maintenance would benefit both countries.'}
-renderOrder();renderTrade();
+function renderTrade(){
+ const p=Number(document.getElementById('belief').value)/100;
+ const cost=Number(document.getElementById('cost').value);
+ const m=3*(1-p),r=4*(1-p)+p-cost;
+ document.getElementById('belief-value').textContent=Math.round(p*100)+'%';
+ document.getElementById('cost-value').textContent=cost.toFixed(2);
+ document.getElementById('maintain').classList.toggle('active',action==='M');
+ document.getElementById('restrict').classList.toggle('active',action==='R');
+ document.getElementById('row-m').classList.toggle('selected',action==='M');
+ document.getElementById('row-r').classList.toggle('selected',action==='R');
+ const conclusion=Math.abs(r-m)<1e-9?'The two policies have equal expected payoff.':r>m?'Restricting has the higher expected payoff.':'Maintaining has the higher expected payoff.';
+ document.getElementById('trade-result').textContent='Expected payoff for A: Maintain '+m.toFixed(2)+'; Restrict '+r.toFixed(2)+'. Your choice: '+(action==='M'?'Maintain. ':'Restrict. ')+conclusion+' This is a one-player sensitivity analysis, not a recalculated Nash equilibrium.';
+}
+function renderModel(){
+ const angle=Number(document.getElementById('angle').value);
+ const c=Math.cos(angle*Math.PI/180);
+ const ab=c*c,ba=ab*ab;
+ document.getElementById('angle-value').textContent=angle+'°';
+ document.getElementById('model-result').textContent='P(A Yes then B Yes) = '+(100*ab).toFixed(1)+'%; P(B Yes then A Yes) = '+(100*ba).toFixed(1)+'%. Difference: '+(100*(ab-ba)).toFixed(1)+' percentage points. These are joint probabilities for the stated initial state, not survey estimates.';
+}
+renderOrder();renderTrade();renderModel();
 </script></body>
 </html>
