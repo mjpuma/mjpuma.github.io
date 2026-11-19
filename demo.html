@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Interactive Demo — Michael J. Puma</title>
-  <meta name="description" content="Interactive visualization of the quantum Ising model and its connection to food system dynamics and human decision-making under stress." />
+  <title>Interactive Decision Games — Michael J. Puma</title>
+  <meta name="description" content="Interactive decision games on question order, trade dilemmas, and quantum probability." />
   <link rel="canonical" href="https://mjpuma.github.io/demo.html" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -328,7 +328,7 @@
     .header-name { display:inline-flex; align-items:center; gap:10px; }
     .header-lion-crop { display:block; position:relative; width:64px; height:48px; overflow:hidden; border:1px solid rgba(255,255,255,.5); border-radius:3px; flex-shrink:0; }
     .header-lion { position:absolute; width:105px; height:auto; max-width:none; left:-8px; top:-5px; display:block; }
-</style>
+.game-tabs,.controls-row{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}.game-tab,.choice{font:inherit;background:#fff;color:var(--navy);border:1px solid var(--lgry);padding:10px 15px;border-radius:5px;cursor:pointer}.game-tab.active,.choice.active{background:var(--navy);color:white}.game-card{background:white;border:1px solid var(--lgry);padding:28px;border-radius:8px;margin-bottom:22px}.game-card[hidden]{display:none}.game-card h2{font:400 2rem 'EB Garamond',serif;color:var(--navy);margin:5px 0 12px}.game-card p{margin-bottom:15px}.label-small{font-size:.78rem;letter-spacing:.07em;text-transform:uppercase;color:var(--gry)}.question-box{padding:22px;background:var(--ice);border-radius:7px}.question-box h3{font:400 1.5rem 'EB Garamond',serif;color:var(--navy);margin:12px 0 18px}#answers{display:flex;gap:10px}#answers button{background:var(--navy);color:white;border:0;padding:10px 24px;border-radius:5px;cursor:pointer}.result{background:var(--ice);padding:15px;border-radius:5px;margin-top:15px}.result:empty{display:none}.math-panel{border-top:1px solid var(--lgry);padding-top:15px;margin-top:20px}.math-panel summary{cursor:pointer;color:var(--navy);font-weight:600}.math-panel p{margin-top:12px}.game-card a{color:var(--navy);text-decoration:underline}.game-card code{white-space:normal}.table-scroll{overflow-x:auto}.payoff{border-collapse:collapse;margin-top:16px;min-width:380px;max-width:590px;width:100%}.payoff caption{text-align:left;color:var(--gry);margin-bottom:8px}.payoff td,.payoff th{border:1px solid var(--lgry);padding:12px;text-align:center}.payoff thead{background:var(--ice)}.payoff .selected{background:#fff2d8}#belief{display:block;max-width:520px;width:100%;accent-color:var(--navy);margin:12px 0}.scope{font-size:.85rem;color:var(--gry);margin:25px 0}</style>
 </head>
 <body>
 
@@ -356,59 +356,20 @@
   </section>
 
   <main>
-
-    <!-- Research connection -->
-    <div class="connection-box">
-      <div class="label">Research Connection</div>
-      <h3>From phase transitions to food market crises</h3>
-      <p>The Ising model describes a lattice of interacting elements — here, 16 countries arranged on a 4×4 grid whose trade policies (open vs. closed) influence their neighbors. The lattice uses periodic boundary conditions: the top row connects to the bottom, the left column connects to the right, forming a torus. This means every country has exactly four neighbors and there are no edge effects — every node sits in an equivalent position, just as in the global trade network where no major trader sits at a periphery.</p>
-      <p>When local interactions accumulate past a critical threshold, the whole system can collectively and suddenly flip from one ordered configuration to another: a phase transition. This is the same mathematical intuition behind the CHSH and quantum decision-making work. Food markets and human mobility systems exhibit analogous transitions from stability to crisis. Standard rational-actor models assume independent agents and smooth dynamics — they miss the precursor signatures of these transitions. Quantum probability frameworks can detect them, because they allow for superposition, tunneling, and interference effects that characterize real decision-making under stress. The 29× difference in Bell violation ratios between crisis and non-crisis periods is precisely such a signature.</p>
-    </div>
-
-    <!-- Three context cards -->
-    <div class="context-grid">
-      <div class="context-card">
-        <h3>Classical Ising Model</h3>
-        <p>16 countries on a 4×4 torus, each with a definite trade policy — open (−1) or closed (+1). Periodic boundary conditions eliminate edge effects: every country has exactly four neighbors. Adjust coupling J (do countries prefer to coordinate or compete?) and external field h (institutional bias toward protectionism or liberalization). Watch energy minimize and policy clusters form.</p>
-      </div>
-      <div class="context-card gold">
-        <h3>Quantum Ising Model</h3>
-        <p>The same 4×4 torus extended with quantum superposition and tunneling. Countries exist in mixed policy states simultaneously — neither fully open nor fully closed. Neighbor coupling J and tunneling rate Δ compete: strong J locks in ordered clusters, strong Δ keeps countries in superposition. Hit <strong>Measure</strong> to collapse all superpositions to definite states — the quantum analog of a crisis resolution, when uncertainty suddenly resolves into a new order.</p>
-      </div>
-      <div class="context-card orange">
-        <h3>Connection to food systems</h3>
-        <p>Trade policy cascades, food market crises, and evacuation decisions are all systems where many interacting agents collectively and suddenly transition from stable to crisis behavior. The 2D lattice with periodic boundaries captures the closed, interdependent structure of the global food network. The quantum extension models the interference effects that arise when decisions are not independent — which is exactly what crises produce.</p>
-      </div>
-    </div>
-
-    <!-- Demo -->
-    <div class="demo-section">
-      <div class="demo-header">
-        <h2>Classical &amp; Quantum Ising — Interactive Visualization</h2>
-        <a href="https://github.com/mjpuma/Quantum_Ising" target="_blank" rel="noopener">View on GitHub →</a>
-      </div>
-
-      <!-- Desktop: embedded iframe -->
-      <iframe
-        src="./quantum_ising_visualization.html"
-        class="demo-iframe"
-        title="Classical and Quantum Ising Model Visualization"
-        loading="lazy">
-      </iframe>
-
-      <!-- Phone: direct link (iframe too small to be usable) -->
-      <div class="demo-mobile-fallback">
-        <p>The interactive model works best on a larger screen. Tap below to open it directly in your browser — it is fully functional on mobile.</p>
-        <a href="./quantum_ising_visualization.html">Open Interactive Model →</a>
-      </div>
-
-      <div class="demo-note">
-        <strong>Desktop:</strong> embedded above. <strong>Phone:</strong> tap the link above to open full-screen. &nbsp;|&nbsp;
-        If the visualization does not load, confirm <code>quantum_ising_visualization.html</code> is in the same directory and that GitHub Pages has rebuilt after your last commit.
-      </div>
-    </div>
-
-  </main>
+<div class="connection-box"><div class="label">Interactive decision laboratory</div><h3>Decisions under uncertainty</h3><p>Two educational games explore context-dependent judgments and strategic choices during hypothetical food-supply disruptions. Classical models provide a baseline; quantum probability offers a possible mathematical framework for certain context effects. These are illustrations, not empirical findings or crisis forecasts.</p></div>
+<div class="game-tabs"><button class="game-tab active" id="tab-order" onclick="show('order')">1 · The Order Matters</button><button class="game-tab" id="tab-trade" onclick="show('trade')">2 · The Trade Dilemma</button></div>
+<section class="game-card" id="game-order"><div class="label-small">Question order · Context · Probability</div><h2>The Order Matters</h2><p>You are advising a government during a grain shortage. Answer two questions, then reverse their order. This is an individual demonstration, not a randomized survey.</p>
+<div class="controls-row"><button class="choice active" id="ab" onclick="setOrder('AB')">Food security first</button><button class="choice" id="ba" onclick="setOrder('BA')">Trade first</button><button class="choice" onclick="resetOrder()">Reset</button></div>
+<div class="question-box"><small id="step"></small><h3 id="question"></h3><div id="answers"><button onclick="answer('Yes')">Yes</button><button onclick="answer('No')">No</button></div><div class="result" id="order-result" aria-live="polite"></div></div>
+<details class="math-panel"><summary>Explore the mathematics</summary><p>Quantum-probability models can represent binary questions by projectors P<sub>A</sub> and P<sub>B</sub>. The sequential probability <code>||P_B P_A |ψ⟩||²</code> can differ from <code>||P_A P_B |ψ⟩||²</code> when the projectors do not commute. This is a mathematical modeling possibility, not evidence of physical quantum cognition.</p><p>Classical context-sensitive models can also produce order effects. Discriminating models requires data and specific testable predictions, such as the QQ equality.</p><p><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4084470/" target="_blank" rel="noopener">Wang et al. (2014), PNAS</a></p></details></section>
+<section class="game-card" id="game-trade" hidden><div class="label-small">Strategic decisions · Game theory</div><h2>The Trade Dilemma</h2><p>Two hypothetical grain-exporting countries face a shortage. Each can maintain exports or restrict them. Choose Country A's action and adjust your belief about Country B's behavior.</p>
+<div class="controls-row"><strong>Country A:</strong><button class="choice active" id="maintain" onclick="choose('M')">Maintain exports</button><button class="choice" id="restrict" onclick="choose('R')">Restrict exports</button></div>
+<label for="belief">Probability Country B restricts: <strong id="belief-value">50%</strong></label><input type="range" id="belief" min="0" max="100" value="50" oninput="renderTrade()">
+<div class="table-scroll"><table class="payoff"><caption>Illustrative payoffs (Country A, Country B); higher is better</caption><thead><tr><th rowspan="2">Country A</th><th colspan="2">Country B</th></tr><tr><th>Maintain</th><th>Restrict</th></tr></thead><tbody><tr id="row-m"><th>Maintain</th><td>(3, 3)</td><td>(0, 4)</td></tr><tr id="row-r"><th>Restrict</th><td>(4, 0)</td><td>(1, 1)</td></tr></tbody></table></div>
+<div class="result" id="trade-result" aria-live="polite"></div>
+<details class="math-panel"><summary>Explore the mathematics</summary><p><strong>Classical baseline:</strong> If p is the probability that B restricts, then Country A's expected payoffs are <code>U(M) = 3(1−p)</code> and <code>U(R) = 4(1−p) + p</code>. Restriction is strictly dominant in this illustrative matrix, and (Restrict, Restrict) is its Nash equilibrium. These numbers are not calibrated to real countries.</p><p><strong>Quantum-probability opportunity:</strong> One could investigate whether contextual representations of beliefs and sequential judgments yield testable improvements over classical behavioral models. This game does not compute quantum equilibria, entanglement, or quantum advantage.</p><p><a href="https://doi.org/10.1016/j.jmp.2015.11.005" target="_blank" rel="noopener">Yearsley &amp; Busemeyer (2016), quantum cognition tutorial</a></p></details></section>
+<p class="scope"><strong>Scope:</strong> Illustrative educational games only. No responses are collected, transmitted, or saved. Neither game implies physical quantum effects in brains or validated predictions of food-market crises.</p>
+</main>
 
   <footer>
     <div class="footer-name">Michael J. Puma</div>
@@ -421,5 +382,16 @@
     <p style="margin-top:14px; font-size:0.75rem; opacity:0.5;">&copy; 2026 Michael J. Puma</p>
   </footer>
 
-</body>
+<script>
+let order='AB',responses=[],action='M';
+const questions={A:'Should the government prioritize domestic food supplies during a shortage?',B:'Should the government maintain grain exports during a shortage?'};
+function show(name){for(const n of ['order','trade']){document.getElementById('game-'+n).hidden=n!==name;document.getElementById('tab-'+n).classList.toggle('active',n===name)}}
+function setOrder(o){order=o;responses=[];document.getElementById('ab').classList.toggle('active',o==='AB');document.getElementById('ba').classList.toggle('active',o==='BA');renderOrder()}
+function resetOrder(){responses=[];renderOrder()}
+function answer(x){if(responses.length<2){responses.push(x);renderOrder()}}
+function renderOrder(){const n=responses.length;document.getElementById('step').textContent=n===2?'Complete':'Question '+(n+1)+' of 2';document.getElementById('question').textContent=n<2?questions[order[n]]:'Your answers';document.getElementById('answers').hidden=n===2;document.getElementById('order-result').innerHTML=n===2?'<strong>Responses:</strong> '+order.split('').map((x,i)=>(x==='A'?'Food security':'Trade')+': '+responses[i]).join('; ')+'<p>Try reversing the order. One person answering twice cannot establish an order effect; repetition may also influence responses.</p>':''}
+function choose(x){action=x;renderTrade()}
+function renderTrade(){const p=Number(document.getElementById('belief').value)/100,m=3*(1-p),r=4*(1-p)+p;document.getElementById('belief-value').textContent=Math.round(p*100)+'%';document.getElementById('maintain').classList.toggle('active',action==='M');document.getElementById('restrict').classList.toggle('active',action==='R');document.getElementById('row-m').classList.toggle('selected',action==='M');document.getElementById('row-r').classList.toggle('selected',action==='R');document.getElementById('trade-result').innerHTML='<strong>Expected payoff for A:</strong> Maintain '+m.toFixed(2)+'; Restrict '+r.toFixed(2)+'. <strong>Your choice:</strong> '+(action==='M'?'Maintain':'Restrict')+'. In this payoff matrix restriction has the higher payoff at every belief level, even though mutual maintenance would benefit both countries.'}
+renderOrder();renderTrade();
+</script></body>
 </html>
