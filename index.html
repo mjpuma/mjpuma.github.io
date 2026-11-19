@@ -407,11 +407,13 @@
     .fade-in.visible { opacity: 1; transform: none; }
 
     /* ── CREATIVE FEATURE ── */
-    .creative-feature { text-align:center; padding-top:8px; }
-    .creative-feature a.poster-link { display:block; max-width:690px; margin:0 auto; }
-    .creative-feature img { width:100%; height:auto; display:block; border:1px solid var(--lgry); border-radius:5px; box-shadow:0 8px 25px rgba(0,56,101,.10); }
-    .creative-feature p { max-width:690px; margin:13px auto 0; font-size:.88rem; color:var(--gry); }
-    .creative-feature p a { color:var(--navy); font-weight:600; text-decoration:underline; text-underline-offset:3px; }
+    .creative-feature { display:grid; grid-template-columns:220px minmax(0,1fr); align-items:center; gap:28px; background:#fff; border:1px solid var(--lgry); border-radius:8px; padding:20px 24px; margin-bottom:48px; }
+    .creative-feature .poster-link { display:block; width:100%; }
+    .creative-feature img { display:block; width:100%; height:auto; border:1px solid var(--lgry); border-radius:4px; box-shadow:0 4px 15px rgba(0,56,101,.1); }
+    .creative-feature .section-title { margin:0 0 10px; padding:0; border:0; }
+    .creative-feature p { font-size:.93rem; color:var(--gry); max-width:570px; }
+    .creative-feature p a { color:var(--navy); font-weight:600; text-underline-offset:3px; }
+    @media(max-width:600px) { .creative-feature { grid-template-columns:125px minmax(0,1fr); gap:14px; padding:14px; } .creative-feature .section-title { font-size:1.45rem; } .creative-feature p { font-size:.82rem; } }
   </style>
 </head>
 <body>
@@ -475,6 +477,16 @@
   </section>
 
   <main>
+    <!-- CREATIVE EXPLORATIONS FEATURE -->
+    <section class="creative-feature fade-in" aria-labelledby="creative-feature-title">
+      <a class="poster-link" href="./creative.html" aria-label="Explore the Creative Explorations gallery"><img src="./assets/creative/scholars-lion-winter.jpg" alt="WPA-inspired winter poster of Columbia University's Scholar's Lion outside Havemeyer Hall" loading="eager" decoding="async"></a>
+      <div>
+        <div class="section-label">Creative Explorations</div>
+        <h2 class="section-title" id="creative-feature-title">Scholar’s Lion in Winter</h2>
+        <p>A winter scene at Columbia University, reimagined in the style of a 1930s American travel poster. <a href="./creative.html">Explore the gallery</a>.</p>
+      </div>
+    </section>
+
 
     <!-- RESEARCH ARC -->
     <section class="fade-in">
@@ -610,15 +622,7 @@
     </section>
 
 
-    <!-- CREATIVE EXPLORATIONS FEATURE -->
-    <section class="creative-feature fade-in" aria-labelledby="creative-feature-title">
-      <div class="section-label">Creative Explorations</div>
-      <h2 class="section-title" id="creative-feature-title">Scholar’s Lion in Winter</h2>
-      <a class="poster-link" href="./creative.html" aria-label="Explore the WPA-inspired Creative Explorations gallery">
-        <img src="./assets/creative/scholars-lion-winter.jpg" alt="WPA-inspired winter poster showing Columbia's Scholar's Lion statue in the snow outside Havemeyer Hall" loading="lazy" decoding="async">
-      </a>
-      <p>A winter scene at Columbia University, reimagined in the style of a 1930s American travel poster. <a href="./creative.html">Explore more artwork</a>.</p>
-    </section>
+
   </main>
 
   <!-- FOOTER -->
