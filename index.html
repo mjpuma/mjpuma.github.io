@@ -407,21 +407,23 @@
     .fade-in.visible { opacity: 1; transform: none; }
 
     /* ── CREATIVE FEATURE ── */
-    .creative-feature { display:grid; grid-template-columns:220px minmax(0,1fr); align-items:center; gap:28px; background:#fff; border:1px solid var(--lgry); border-radius:8px; padding:20px 24px; margin-bottom:48px; }
-    .creative-feature .poster-link { display:block; width:100%; }
-    .creative-feature img { display:block; width:100%; height:auto; border:1px solid var(--lgry); border-radius:4px; box-shadow:0 4px 15px rgba(0,56,101,.1); }
-    .creative-feature .section-title { margin:0 0 10px; padding:0; border:0; }
-    .creative-feature p { font-size:.93rem; color:var(--gry); max-width:570px; }
+    .creative-feature { text-align:center; padding-top:8px; }
+    .creative-feature .poster-link { display:block; max-width:690px; margin:0 auto 14px; }
+    .creative-feature img { display:block; width:100%; height:auto; border:1px solid var(--lgry); border-radius:5px; box-shadow:0 8px 25px rgba(0,56,101,.10); }
+    .creative-feature .section-title { margin-bottom:18px; }
+    .creative-feature p { max-width:690px; margin:0 auto; font-size:.88rem; color:var(--gry); }
     .creative-feature p a { color:var(--navy); font-weight:600; text-underline-offset:3px; }
-    @media(max-width:600px) { .creative-feature { grid-template-columns:125px minmax(0,1fr); gap:14px; padding:14px; } .creative-feature .section-title { font-size:1.45rem; } .creative-feature p { font-size:.82rem; } }
-  </style>
+    /* Scholar’s Lion miniature in shared site banner */
+    .header-name { display:inline-flex; align-items:center; gap:10px; }
+    .header-lion { display:block; width:38px; height:32px; object-fit:cover; object-position:center 42%; border:1px solid rgba(255,255,255,.5); border-radius:3px; flex-shrink:0; }
+</style>
 </head>
 <body>
 
   <!-- HEADER -->
   <header class="site-header">
     <div class="header-inner">
-      <a href="./index.html" class="header-name">Michael J. Puma <span>· Columbia</span></a>
+      <a href="./index.html" class="header-name"><img class="header-lion" src="./assets/creative/scholars-lion-winter.jpg" alt="Scholar’s Lion in Winter poster" width="38" height="32">Michael J. Puma <span>· Columbia</span></a>
       <nav>
         <a href="https://people.climate.columbia.edu/users/profile/michael-joseph-puma" target="_blank" rel="noopener">Columbia Profile</a>
         <a href="https://scholar.google.com/citations?user=L4T5olUAAAAJ&hl=en" target="_blank" rel="noopener">Publications</a>
@@ -477,15 +479,7 @@
   </section>
 
   <main>
-    <!-- CREATIVE EXPLORATIONS FEATURE -->
-    <section class="creative-feature fade-in" aria-labelledby="creative-feature-title">
-      <a class="poster-link" href="./creative.html" aria-label="Explore the Creative Explorations gallery"><img src="./assets/creative/scholars-lion-winter.jpg" alt="WPA-inspired winter poster of Columbia University's Scholar's Lion outside Havemeyer Hall" loading="eager" decoding="async"></a>
-      <div>
-        <div class="section-label">Creative Explorations</div>
-        <h2 class="section-title" id="creative-feature-title">Scholar’s Lion in Winter</h2>
-        <p>A winter scene at Columbia University, reimagined in the style of a 1930s American travel poster. <a href="./creative.html">Explore the gallery</a>.</p>
-      </div>
-    </section>
+
 
 
     <!-- RESEARCH ARC -->
@@ -623,6 +617,15 @@
 
 
 
+    <!-- CREATIVE EXPLORATIONS FEATURE -->
+    <section class="creative-feature fade-in" aria-labelledby="creative-feature-title">
+      <a class="poster-link" href="./creative.html" aria-label="Explore the Creative Explorations gallery"><img src="./assets/creative/scholars-lion-winter.jpg" alt="WPA-inspired winter poster of Columbia University's Scholar's Lion outside Havemeyer Hall" loading="lazy" decoding="async"></a>
+      <div>
+        <div class="section-label">Creative Explorations</div>
+        <h2 class="section-title" id="creative-feature-title">Scholar’s Lion in Winter</h2>
+        <p>A winter scene at Columbia University, reimagined in the style of a 1930s American travel poster. <a href="./creative.html">Explore the gallery</a>.</p>
+      </div>
+    </section>
   </main>
 
   <!-- FOOTER -->
