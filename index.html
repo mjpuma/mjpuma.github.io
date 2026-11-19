@@ -405,6 +405,13 @@
     /* Fade-in animation */
     .fade-in { opacity: 0; transform: translateY(18px); transition: opacity 0.6s ease, transform 0.6s ease; }
     .fade-in.visible { opacity: 1; transform: none; }
+
+    /* ── CREATIVE FEATURE ── */
+    .creative-feature { text-align:center; padding-top:8px; }
+    .creative-feature a.poster-link { display:block; max-width:690px; margin:0 auto; }
+    .creative-feature img { width:100%; height:auto; display:block; border:1px solid var(--lgry); border-radius:5px; box-shadow:0 8px 25px rgba(0,56,101,.10); }
+    .creative-feature p { max-width:690px; margin:13px auto 0; font-size:.88rem; color:var(--gry); }
+    .creative-feature p a { color:var(--navy); font-weight:600; text-decoration:underline; text-underline-offset:3px; }
   </style>
 </head>
 <body>
@@ -602,6 +609,16 @@
       </div>
     </section>
 
+
+    <!-- CREATIVE EXPLORATIONS FEATURE -->
+    <section class="creative-feature fade-in" aria-labelledby="creative-feature-title">
+      <div class="section-label">Creative Explorations</div>
+      <h2 class="section-title" id="creative-feature-title">Scholar’s Lion in Winter</h2>
+      <a class="poster-link" href="./creative.html" aria-label="Explore the WPA-inspired Creative Explorations gallery">
+        <img src="./assets/creative/scholars-lion-winter.jpg" alt="WPA-inspired winter poster showing Columbia's Scholar's Lion statue in the snow outside Havemeyer Hall" loading="lazy" decoding="async">
+      </a>
+      <p>A winter scene at Columbia University, reimagined in the style of a 1930s American travel poster. <a href="./creative.html">Explore more artwork</a>.</p>
+    </section>
   </main>
 
   <!-- FOOTER -->
