@@ -311,50 +311,6 @@
       line-height: 1.5;    /* was 1.45 */
     }
 
-    /* ── VENUES ── */
-    .venues-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-      gap: 10px;
-    }
-    .venue-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      background: white;
-      border: 1px solid var(--lgry);
-      border-radius: 6px;
-      padding: 10px 14px;
-    }
-    .venue-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      margin-top: 5px;
-      flex-shrink: 0;
-    }
-    .venue-name { font-size: 0.9rem; font-weight: 600; color: var(--navy); }  /* was 0.875rem */
-    .venue-note { font-size: 0.8rem; color: var(--gry); }                      /* was 0.75rem */
-
-    /* ── LEADERSHIP ── */
-    .leadership-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
-    }
-    .role-card {
-      background: white;
-      border: 1px solid var(--lgry);
-      border-left: 4px solid var(--cblu);
-      border-radius: 6px;
-      padding: 18px 20px;
-    }
-    .role-card.gold   { border-left-color: var(--gold); }
-    .role-card.purp   { border-left-color: var(--purp); }
-    .role-card.orange { border-left-color: var(--orange); }
-    .role-title { font-size: 1rem; font-weight: 600; color: var(--navy); margin-bottom: 5px; }
-    .role-desc  { font-size: 0.9rem; color: var(--gry); line-height: 1.55; }  /* was 0.85rem */
-
     /* ── TEACHING ── */
     .teaching-grid {
       display: grid;
@@ -468,12 +424,13 @@
       </div>
       <div class="stats-sidebar">
         <div class="nature-banner">
-          <div class="nature-num">8</div>
-          <div class="nature-label">Nature-family papers published</div>
+          <div class="nature-num">9</div>
+          <div class="nature-label">Publications in Nature Portfolio journals</div>
           <div class="nature-list">
             Nature &nbsp;·&nbsp; Nature Food (×4)<br>
             Nature Communications<br>
-            Nature Sustainability (×2)
+            Nature Sustainability (×2)<br>
+            Communications Earth &amp; Environment
           </div>
         </div>
         <div class="stat-card">
@@ -563,54 +520,6 @@
           </div>
         </div>
 
-      </div>
-    </section>
-
-    <!-- TOP-TIER VENUES -->
-    <section class="fade-in">
-      <div class="section-label">Publication Record</div>
-      <h2 class="section-title">Top-Tier Venues</h2>
-      <div class="venues-grid">
-        <div class="venue-item"><div class="venue-dot" style="background:var(--navy)"></div><div><div class="venue-name">Nature</div><div class="venue-note">Dalin, Wada, Kastner & Puma (2017) · 1,044 citations</div></div></div>
-        <div class="venue-item"><div class="venue-dot" style="background:var(--cblu)"></div><div><div class="venue-name">Nature Food</div><div class="venue-note">5 papers: 4 published · 1 in review · more in prep</div></div></div>
-        <div class="venue-item"><div class="venue-dot" style="background:var(--purp)"></div><div><div class="venue-name">Nature Communications</div><div class="venue-note">Cropland & climate oscillations (2018) · 146 citations</div></div></div>
-        <div class="venue-item"><div class="venue-dot" style="background:var(--gold)"></div><div><div class="venue-name">Nature Sustainability</div><div class="venue-note">2 papers: food crisis & refugees (2018) · resilience (2019)</div></div></div>
-        <div class="venue-item"><div class="venue-dot" style="background:#1D3461"></div><div><div class="venue-name">PNAS</div><div class="venue-note">Nuclear conflict & food security (2020) · S1/S2 in prep</div></div></div>
-        <div class="venue-item"><div class="venue-dot" style="background:var(--cblu)"></div><div><div class="venue-name">Comm. Earth &amp; Environ.</div><div class="venue-note">Ukraine wheat prices (2024)</div></div></div>
-        <div class="venue-item"><div class="venue-dot" style="background:var(--gold)"></div><div><div class="venue-name">Global Environ. Change</div><div class="venue-note">Food vulnerability & migration (submitting)</div></div></div>
-        <div class="venue-item"><div class="venue-dot" style="background:var(--gry)"></div><div><div class="venue-name">Environ. Research Letters</div><div class="venue-note">Food fragility (2015, 602 citations) · multiple others</div></div></div>
-      </div>
-    </section>
-
-    <!-- LEADERSHIP -->
-    <section class="fade-in">
-      <div class="section-label">Leadership &amp; Service</div>
-      <h2 class="section-title">Leadership as Research Platform</h2>
-      <div class="leadership-grid">
-        <div class="role-card">
-          <div class="role-title">CCSR Director</div>
-          <div class="role-desc">Leading 35+ staff at Columbia/NASA GISS; stabilizing and repositioning the center amid unprecedented federal funding uncertainty.</div>
-        </div>
-        <div class="role-card gold">
-          <div class="role-title">Food for Humanity Initiative</div>
-          <div class="role-desc">Took over and relaunched January 2026; seed funding from Rockefeller Foundation/GAIN and $100K Climate Science &amp; Communications gift. Three pillars: Living Lab, Data &amp; Innovation Hub, Food System Dynamics.</div>
-        </div>
-        <div class="role-card gold">
-          <div class="role-title">AGU Editor, Earth's Future</div>
-          <div class="role-desc">Shaping the field's leading interdisciplinary Earth science journal.</div>
-        </div>
-        <div class="role-card purp">
-          <div class="role-title">ICCS Main Track Convener</div>
-          <div class="role-desc">International Conference on Computational Science; bridges mathematics and computer science with physics, life sciences, engineering, and humanities.</div>
-        </div>
-        <div class="role-card purp" style="border-left-color:var(--navy)">
-          <div class="role-title">DARPA Quantum Computing Panel</div>
-          <div class="role-desc">Unique opportunity to be at the forefront of climate applications for quantum computing and quantum probability theory.</div>
-        </div>
-        <div class="role-card purp">
-          <div class="role-title">AGU Fall 2026 (proposed)</div>
-          <div class="role-desc">Proposing first-ever Quantum Methods in Earth Systems session at AGU.</div>
-        </div>
       </div>
     </section>
 
