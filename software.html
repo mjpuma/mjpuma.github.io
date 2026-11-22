@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Research software developed by Michael J. Puma and collaborators: food-system shock cascades, agricultural market models, migration networks, and environmental dynamics.">
+  <link rel="canonical" href="https://mjpuma.github.io/software.html">
+  <meta property="og:title" content="Research Software | Michael J. Puma">
+  <meta property="og:description" content="Selected research models and computational frameworks for understanding food-system crises, human mobility, and environmental change.">
+  <title>Research Software | Michael J. Puma</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--navy:#003865;--blue:#9BCBEB;--gold:#C4A265;--ink:#1A2B3C;--muted:#5e7182;--line:#d8e6ef;--paper:#f6f9fc;--white:#fff}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.62 'DM Sans',sans-serif}
+    a{color:#07527f}
+    .site-header{background:var(--navy);color:white;position:sticky;top:0;z-index:20;box-shadow:0 2px 14px #00386522}
+    .header-inner{max-width:1120px;margin:auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
+    .brand{font:600 1.25rem 'EB Garamond',serif;color:#fff;text-decoration:none}
+    .brand span{color:var(--blue)}
+    nav{display:flex;gap:7px;flex-wrap:wrap}
+    nav a{font-size:.83rem;font-weight:600;color:var(--blue);text-decoration:none;border:1px solid #9bcbeb55;border-radius:20px;padding:6px 12px}
+    nav a:hover,nav a[aria-current=page]{background:#9bcbeb22;color:white}
+    .hero{background:linear-gradient(130deg,#003865,#164d76);color:white;padding:70px 24px 66px;border-bottom:5px solid var(--gold)}
+    .hero-inner{max-width:1100px;margin:auto}
+    .kicker{color:var(--gold);text-transform:uppercase;font-size:.75rem;font-weight:700;letter-spacing:.15em}
+    h1,h2,h3{font-family:'EB Garamond',serif;line-height:1.2}
+    h1{font-size:clamp(2.5rem,5vw,4.25rem);font-weight:500;margin:10px 0 16px}
+    .hero p{max-width:790px;color:#e0edf7;font-size:1.02rem;margin:0}
+    main{max-width:1100px;padding:45px 24px 65px;margin:auto}
+    .intro{color:var(--muted);max-width:850px;margin:0 0 32px}
+    .section-heading{display:flex;align-items:baseline;justify-content:space-between;gap:20px;border-bottom:2px solid var(--line);padding-bottom:13px;margin:0 0 22px}
+    .section-heading h2{font-size:2rem;color:var(--navy);font-weight:500;margin:0}
+    .section-heading span{font-size:.78rem;color:var(--muted)}
+    .cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+    .card{background:white;border:1px solid var(--line);border-radius:12px;box-shadow:0 9px 30px #0038650b;padding:24px;display:flex;flex-direction:column;min-height:285px;transition:transform .2s,border-color .2s}
+    .card:hover{transform:translateY(-2px);border-color:#a7c8dc}
+    .card-top{display:flex;align-items:center;gap:16px;min-height:88px;margin-bottom:12px}
+    .image-wrap{width:104px;height:104px;flex:none;background:#f5f9fc;border:1px solid #dfebf3;border-radius:10px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+    .image-wrap img{display:block;max-width:96%;max-height:96%;object-fit:contain}
+    .image-wrap img.cover{width:100%;height:100%;max-width:100%;max-height:100%;object-fit:cover}
+    .glyph{font:600 2.2rem 'EB Garamond',serif;letter-spacing:-.06em;color:var(--navy);text-align:center}
+    .glyph small{display:block;font:600 .66rem 'DM Sans',sans-serif;color:#9e793b;letter-spacing:.13em;text-transform:uppercase}
+    .card h3{color:var(--navy);font-size:1.54rem;font-weight:600;margin:0}
+    .card .eyebrow{font-size:.69rem;letter-spacing:.11em;text-transform:uppercase;font-weight:700;color:#8a713e;margin:4px 0 0}
+    .card p{font-size:.91rem;color:#44596a;margin:0 0 17px}
+    .card .link{font-size:.87rem;font-weight:700;text-decoration:none;margin-top:auto;align-self:flex-start;border-bottom:1px solid #a9c7db;padding-bottom:2px}
+    .card .link:hover{color:var(--navy);border-color:var(--gold)}
+    .note{margin-top:auto;font-size:.78rem;color:#64788a;border-top:1px solid #edf1f4;padding-top:12px}
+    .partners{color:#476074}
+    .additional{margin-top:40px;padding:22px 25px;background:#eaf2f8;border-left:4px solid var(--gold);border-radius:7px}
+    .additional h2{font-size:1.5rem;color:var(--navy);margin:0 0 8px}
+    .additional p{font-size:.91rem;margin:0;color:#43576a}
+    footer{background:var(--navy);color:#c4ddec;text-align:center;padding:30px 20px;font-size:.85rem}
+    footer a{color:var(--blue);text-decoration:none}
+    @media(max-width:760px){.cards{grid-template-columns:1fr}.hero{padding:52px 20px}.header-inner{align-items:flex-start}.card{min-height:0}.section-heading{display:block}.section-heading span{display:block;margin-top:4px}}
+    @media(max-width:400px){.card-top{gap:12px}.image-wrap{width:78px;height:78px}.card h3{font-size:1.3rem}}
+  </style>
+</head>
+<body>
+<header class="site-header"><div class="header-inner">
+  <a class="brand" href="./index.html">Michael J. Puma <span>· Columbia</span></a>
+  <nav aria-label="Main navigation">
+    <a href="./index.html">Home</a>
+    <a href="./software.html" aria-current="page">Research Software</a>
+    <a href="./demo.html">Interactive</a>
+    <a href="./creative.html">Creative Explorations</a>
+    <a href="https://scholar.google.com/citations?user=L4T5olUAAAAJ&amp;hl=en" target="_blank" rel="noopener">Publications ↗</a>
+  </nav>
+</div></header>
+<section class="hero"><div class="hero-inner">
+  <div class="kicker">Research · Models · Open code</div>
+  <h1>Research Software</h1>
+  <p>Computational models and research tools developed through my work and collaborations, spanning systemic food risks, human mobility, and environmental processes. These projects range from published research code to active model development and exploratory prototypes.</p>
+</div></section>
+<main>
+  <p class="intro">A selected portfolio rather than a complete GitHub listing. Project descriptions identify their scope; links lead to public repositories when appropriate. Collaborative work is credited separately from independently hosted code.</p>
+  <div class="section-heading"><h2>Featured research software</h2><span>Selected projects</span></div>
+  <div class="cards">
+    <article class="card">
+      <div class="card-top">
+        <div class="image-wrap"><img src="https://raw.githubusercontent.com/mjpuma/FoodShockCascadeModel/master/clean_vector_logo_on_white_background_a_circular.png" alt="Food Shock Cascade emblem" loading="lazy"></div>
+        <div><h3>Food Shock Cascade</h3><div class="eyebrow">Food systems · Network modeling</div></div>
+      </div>
+      <p>The FSC model simulates how production shocks and export restrictions propagate through international agricultural trade networks, examining the roles of trade allocation and food reserves.</p>
+      <a class="link" href="https://github.com/mjpuma/FoodShockCascadeModel" target="_blank" rel="noopener">Explore repository →</a>
+    </article>
+    <article class="card">
+      <div class="card-top">
+        <div class="image-wrap" aria-hidden="true"><div class="glyph" style="color:#277a29">SHEAF<small>Food markets</small></div></div>
+        <div><h3>Agrimate–SHEAF</h3><div class="eyebrow">Agricultural markets · Collaboration</div></div>
+      </div>
+      <p>Developed in collaboration with Christian Otto and Kilian Kuhla at the Potsdam Institute for Climate Impact Research (PIK), this extension of Agrimate explores crop substitution, strategic policy responses, and vulnerability to food-market disruptions.</p>
+      <div class="note partners">Collaborative research development · Columbia University and PIK</div>
+    </article>
+    <article class="card">
+      <div class="card-top">
+        <div class="image-wrap" aria-hidden="true"><div class="glyph">↔<small>Networks</small></div></div>
+        <div><h3>Migration &amp; Refugee Network Roles</h3><div class="eyebrow">Mobility · Network analysis</div></div>
+      </div>
+      <p>Research code for analyzing international migrant and refugee flow networks, classifying countries' structural roles, and examining relationships with conflict, socioeconomic conditions, drought, and disasters.</p>
+      <a class="link" href="https://github.com/mjpuma/RolesMigrationRefugees" target="_blank" rel="noopener">Explore repository →</a>
+    </article>
+    <article class="card">
+      <div class="card-top">
+        <div class="image-wrap"><img src="https://raw.githubusercontent.com/mjpuma/AgRichterScale/main/assets/AgRichter_logo.svg" alt="AgRichter agricultural disruption scale logo" loading="lazy"></div>
+        <div><h3>AgRichter Scale</h3><div class="eyebrow">Hazard magnitude · Agricultural production</div></div>
+      </div>
+      <p>A quantitative framework for characterizing the magnitude of agricultural production disruptions, using spatial production data and harvest–production envelopes to analyze potential losses.</p>
+      <a class="link" href="https://github.com/mjpuma/AgRichterScale" target="_blank" rel="noopener">Explore repository →</a>
+    </article>
+    <article class="card">
+      <div class="card-top">
+        <div class="image-wrap" aria-hidden="true"><div class="glyph">H₂O<small>Trade flows</small></div></div>
+        <div><h3>FoodTradeNetwork</h3><div class="eyebrow">Virtual water · Global trade</div></div>
+      </div>
+      <p>Research tools for tracing the water embedded in international agricultural trade, examining blue- and green-water dependencies and vulnerabilities in resource-connected food systems.</p>
+      <a class="link" href="https://github.com/mjpuma/FoodTradeNetwork" target="_blank" rel="noopener">Explore repository →</a>
+    </article>
+    <article class="card">
+      <div class="card-top">
+        <div class="image-wrap"><img src="https://raw.githubusercontent.com/mjpuma/tessera/main/assets/tessera-icon.png" alt="TESSERA crop-mixture research emblem" loading="lazy"></div>
+        <div><h3>TESSERA</h3><div class="eyebrow">Crop diversity · Resilience</div></div>
+      </div>
+      <p>An exploratory model linking crop variety mixtures and field-level environmental variability to regional production stability and local grain-market outcomes. Parameters remain illustrative and uncalibrated.</p>
+      <a class="link" href="https://github.com/mjpuma/tessera" target="_blank" rel="noopener">Explore repository →</a>
+    </article>
+    <article class="card">
+      <div class="card-top">
+        <div class="image-wrap"><img class="cover" src="https://raw.githubusercontent.com/mjpuma/RiverDeltaModel/main/assets/delta_710yr.png" alt="RiverDeltaModel bed elevation and avulsion-frequency simulation" loading="lazy"></div>
+        <div><h3>RiverDeltaModel</h3><div class="eyebrow">Geomorphology · Environmental modeling</div></div>
+      </div>
+      <p>A cellular model of river-delta evolution, channel avulsions, sediment routing, and three-dimensional stratigraphy. Originally developed in Fortran and subsequently modernized and validated in Python.</p>
+      <a class="link" href="https://github.com/mjpuma/RiverDeltaModel" target="_blank" rel="noopener">Explore repository →</a>
+    </article>
+  </div>
+  <aside class="additional">
+    <h2>Additional research code</h2>
+    <p>The <a href="https://github.com/mjpuma/CascadeModel_NuclearWinter" target="_blank" rel="noopener">Nuclear Winter Cascade Model</a> includes code for food-trade shock propagation in nuclear-conflict food-security scenarios. Additional software and analysis repositories are available on <a href="https://github.com/mjpuma" target="_blank" rel="noopener">my GitHub profile</a>.</p>
+  </aside>
+</main>
+<footer>Michael J. Puma · Columbia Climate School &nbsp;·&nbsp; <a href="./index.html">Home</a> &nbsp;·&nbsp; <a href="https://github.com/mjpuma">GitHub</a></footer>
+</body>
+</html>
