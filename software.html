@@ -20,6 +20,10 @@
     .header-inner{max-width:1120px;margin:auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
     .brand{font:600 1.25rem 'EB Garamond',serif;color:#fff;text-decoration:none}
     .brand span{color:var(--blue)}
+    /* Match the Scholar's Lion branding on the main homepage. */
+    .brand{display:inline-flex;align-items:center;gap:10px;white-space:nowrap}
+    .header-lion-crop{display:block;position:relative;width:64px;height:48px;overflow:hidden;border:1px solid rgba(255,255,255,.5);border-radius:3px;flex-shrink:0}
+    .header-lion{position:absolute;width:105px;height:auto;max-width:none;left:-8px;top:-5px;display:block}
     nav{display:flex;gap:7px;flex-wrap:wrap}
     nav a{font-size:.83rem;font-weight:600;color:var(--blue);text-decoration:none;border:1px solid #9bcbeb55;border-radius:20px;padding:6px 12px}
     nav a:hover,nav a[aria-current=page]{background:#9bcbeb22;color:white}
@@ -65,7 +69,7 @@
 </head>
 <body>
 <header class="site-header"><div class="header-inner">
-  <a class="brand" href="./index.html">Michael J. Puma <span>· Columbia</span></a>
+  <a class="brand" href="./index.html"><span class="header-lion-crop"><img class="header-lion" src="./assets/creative/scholars-lion-banner.jpg" alt="Scholar’s Lion" width="61" height="48"></span>Michael J. Puma <span>· Columbia</span></a>
   <nav aria-label="Main navigation">
     <a href="./index.html">Home</a>
     <a href="./software.html" aria-current="page">Research Software</a>
