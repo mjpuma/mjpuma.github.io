@@ -47,8 +47,8 @@
     .image-wrap img.cover{width:100%;height:100%;max-width:100%;max-height:100%;object-fit:cover}
     /* Wide research logos are banners, not square thumbnails: retain full extent of artwork. */
     .card-top.with-banner{display:block;min-height:0;margin-bottom:13px}
-    .with-banner .image-wrap{width:100%;height:126px;margin-bottom:14px;padding:10px;background:#fff;overflow:visible}
-    .with-banner .image-wrap img{width:100%;height:100%;max-width:100%;max-height:100%;object-fit:contain}
+    .with-banner .image-wrap{width:100%;height:auto;min-height:126px;margin-bottom:14px;padding:10px;background:#fff;overflow:hidden}
+    .with-banner .image-wrap img{display:block;width:100%;height:auto;max-width:100%;max-height:220px;object-fit:contain}
     .glyph{font:600 2.2rem 'EB Garamond',serif;letter-spacing:-.06em;color:var(--navy);text-align:center}
     .glyph small{display:block;font:600 .66rem 'DM Sans',sans-serif;color:#9e793b;letter-spacing:.13em;text-transform:uppercase}
     .card h3{color:var(--navy);font-size:1.54rem;font-weight:600;margin:0}
@@ -109,7 +109,7 @@
     </article>
     <article class="card">
       <div class="card-top with-banner">
-        <div class="image-wrap"><img src="https://raw.githubusercontent.com/mjpuma/TherapeuticProvisioning/main/assets/therapeutic-provisioning-mark.svg" alt="TherapeuticProvisioning logo showing a balance between a sealed therapeutic food sachet and fortified blended food, with an early warning signal" loading="lazy"></div>
+        <div class="image-wrap"><img src="https://raw.githubusercontent.com/mjpuma/TherapeuticProvisioning/main/assets/therapeutic-provisioning-logo-new.png" alt="TherapeuticProvisioning logo showing a balance between a sealed therapeutic food sachet and fortified blended food, with an early warning signal" loading="lazy"></div>
         <div><h3>TherapeuticProvisioning</h3><div class="eyebrow">Humanitarian nutrition · Stochastic decision-making</div></div>
       </div>
       <p>A research model examining how to allocate constrained humanitarian nutrition budgets between ready-to-use therapeutic food (RUTF) and fortified blended food (CSB+). It evaluates procurement choices under uncertain caseloads, early-warning information, transport disruptions, and competing resource needs across illustrative crisis settings.</p>
@@ -178,7 +178,7 @@
     <div class="cards">
       <article class="card">
         <div class="card-top with-banner">
-          <div class="image-wrap"><img src="https://raw.githubusercontent.com/mjpuma/faminewatch-datasets/main/assets/faminewatch-datasets-logo.svg" alt="FamineWatch Datasets historical famine research compilation logo" loading="lazy"></div>
+          <div class="image-wrap"><img src="https://raw.githubusercontent.com/mjpuma/faminewatch-datasets/main/assets/faminewatch-datasets-logo.png" alt="FamineWatch Datasets historical famine research compilation logo" loading="lazy"></div>
           <div><h3>FamineWatch Datasets</h3><div class="eyebrow">Historical famines · Research compilation</div></div>
         </div>
         <p>A curated compilation of selected historical and contemporary famines and food disruptions, with documented causes, environmental conditions, timing, impacts, and source references. This is an evolving research and teaching resource, not an operational early-warning system.</p>
