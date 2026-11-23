@@ -101,13 +101,14 @@
 .heritage .note-eyebrow{font-size:.72rem;letter-spacing:.09em;text-transform:uppercase;color:#7b786f;margin:0 0 9px}
 .heritage h2{font:400 1.9rem/1.25 'EB Garamond',serif;color:#293e4b;margin-bottom:15px}
 .heritage p{max-width:720px;font-size:.96rem;line-height:1.75;color:#35434d}
-.heritage-map{width:100%;max-width:400px;margin:24px 0 22px;padding:0;background:transparent;border:0;border-radius:0}
+.heritage-layout{display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:36px;align-items:start}
+.heritage-map{width:100%;max-width:none;margin:0;padding:0;background:transparent;border:0;border-radius:0}
 .heritage-map img{border:1px solid #d9d3c9;border-radius:2px!important;filter:saturate(.72);}
 .heritage-map figcaption{padding:8px 0 0;font-size:.77rem;font-weight:400;line-height:1.5;color:#737979}
 .heritage-links{gap:16px;margin-top:14px}
 .heritage-links a{display:inline;padding:0;background:none;border:0;border-bottom:1px solid #a9b7bc;border-radius:0;font-size:.88rem;font-weight:500;color:#365266}
 .heritage-links a:hover{background:none;border-color:#365266}
-@media(max-width:650px){.heritage-map{max-width:320px}}
+@media(max-width:650px){.heritage-layout{grid-template-columns:1fr;gap:18px}.heritage-map{max-width:280px}}
 
 </style>
 </head>
@@ -144,12 +145,17 @@
 <section class="heritage" id="heritage" aria-labelledby="heritage-title">
   <div class="note-eyebrow">A personal notebook entry</div>
   <h2 id="heritage-title">Heritage: Migration, Hunger, and Belonging</h2>
-  <p>My family's roots in <strong>Castellammare del Golfo, Sicily</strong>, and <strong>Ireland</strong> are part of what drew me to the study of food insecurity, migration, and refugees. These histories make the relationship between hunger, political conditions, and human mobility more than an abstract research question.</p>
-  <p>For generations, Sicily experienced foreign rule, political upheaval, and persistent economic inequality, conditions that helped drive emigration in the late nineteenth and early twentieth centuries. On my Irish side, much of my family's migration history reaches back to the era of the <strong>Great Irish Famine (1845–1852)</strong>, when crop failure, poverty, and political and institutional failures forced enormous numbers of people to leave. Both histories connect to New York, where migration reshaped families and communities.</p>
-  <figure class="heritage-map"><img src="assets/creative/heritage-migration-map.jpg" alt="Vintage-style map showing migration from Ireland and Castellammare del Golfo, Sicily, to New York City, with Ellis Island and a steamship illustrated below." loading="lazy" style="width:100%;height:auto;display:block;border-radius:4px"><figcaption><strong>Two family migration histories, one destination.</strong> Illustrative migration pathways from Ireland during the nineteenth century and from Sicily in the late nineteenth and early twentieth centuries. Routes are schematic, not documented family itineraries.</figcaption></figure>
-  <p>New York's <a href="https://bpca.ny.gov/place/irish-hunger-memorial/" target="_blank" rel="noopener">Irish Hunger Memorial</a> in Battery Park City commemorates the Great Famine and explicitly connects that history to hunger in the world today. It is a powerful reminder of why the past remains relevant to contemporary food-security research.</p>
-  <p>My <strong>Sicilian-American flag project</strong> is another way of exploring this heritage through design, symbolism, and the experience of building a new identity across generations.</p>
-  <div class="heritage-links"><a href="https://mjpuma.github.io/sicilian-american-flag/" target="_blank" rel="noopener">Explore the Sicilian-American Flag</a><a href="https://bpca.ny.gov/place/irish-hunger-memorial/" target="_blank" rel="noopener">Visit the Irish Hunger Memorial</a></div>
+  <div class="heritage-layout">
+    <div class="heritage-copy">
+    <p>My family's roots in <strong>Castellammare del Golfo, Sicily</strong>, and <strong>Ireland</strong> are part of what drew me to the study of food insecurity, migration, and refugees. These histories make the relationship between hunger, political conditions, and human mobility more than an abstract research question.</p>
+      <p>For generations, Sicily experienced foreign rule, political upheaval, and persistent economic inequality, conditions that helped drive emigration in the late nineteenth and early twentieth centuries. On my Irish side, much of my family's migration history reaches back to the era of the <strong>Great Irish Famine (1845–1852)</strong>, when crop failure, poverty, and political and institutional failures forced enormous numbers of people to leave. Both histories connect to New York, where migration reshaped families and communities.</p>
+    
+      <p>New York's <a href="https://bpca.ny.gov/place/irish-hunger-memorial/" target="_blank" rel="noopener">Irish Hunger Memorial</a> in Battery Park City commemorates the Great Famine and explicitly connects that history to hunger in the world today. It is a powerful reminder of why the past remains relevant to contemporary food-security research.</p>
+      <p>My <strong>Sicilian-American flag project</strong> is another way of exploring this heritage through design, symbolism, and the experience of building a new identity across generations.</p>
+      <div class="heritage-links"><a href="https://mjpuma.github.io/sicilian-american-flag/" target="_blank" rel="noopener">Explore the Sicilian-American Flag</a><a href="https://bpca.ny.gov/place/irish-hunger-memorial/" target="_blank" rel="noopener">Visit the Irish Hunger Memorial</a></div>
+    </div>
+    <figure class="heritage-map"><img src="assets/creative/heritage-migration-map.jpg" alt="Vintage-style map showing migration from Ireland and Castellammare del Golfo, Sicily, to New York City, with Ellis Island and a steamship illustrated below." loading="lazy" style="width:100%;height:auto;display:block;border-radius:4px"><figcaption><strong>Two family migration histories, one destination.</strong> Illustrative migration pathways from Ireland during the nineteenth century and from Sicily in the late nineteenth and early twentieth centuries. Routes are schematic, not documented family itineraries.</figcaption></figure>
+  </div>
 </section>
 
 </main>
