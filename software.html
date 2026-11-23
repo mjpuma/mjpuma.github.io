@@ -105,6 +105,18 @@
       object-position:center;
     }
 
+
+    /* Research coherence: text-first overview, not a decorative concept map. */
+    .research-frame{max-width:940px;margin:0 0 38px;padding:0 0 25px;border-bottom:1px solid var(--line)}
+    .research-frame h2{font-size:1.75rem;font-weight:500;color:var(--navy);margin:0 0 10px}
+    .research-frame p{margin:0 0 18px;color:#44596a;font-size:.96rem;line-height:1.75;max-width:850px}
+    .research-arc{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+    .research-arc span{display:block;padding:12px 10px 12px 0;border-top:2px solid #a9bac8;color:var(--navy);font-size:.84rem;font-weight:600;line-height:1.5}
+    .software-theme{margin:0 0 38px}
+    .theme-heading{margin-bottom:18px}
+    .theme-heading h3{font-size:1.5rem;font-weight:500;color:var(--navy);margin:0 0 5px}
+    .theme-heading p{font-size:.89rem;line-height:1.65;color:var(--muted);max-width:790px;margin:0}
+    @media(max-width:650px){.research-arc{grid-template-columns:1fr;gap:4px}.research-arc span{padding:7px 0;border-top:1px solid #c4d4df}.research-frame{margin-bottom:26px}}
   </style>
 </head>
 <body>
@@ -124,58 +136,18 @@
   <p>Computational models and research tools developed through my work and collaborations, spanning systemic food risks, human mobility, and environmental processes. These projects range from published research code to active model development and exploratory prototypes.</p>
 </div></section>
 <main>
-  <p class="intro">A selected portfolio rather than a complete GitHub listing. Project descriptions identify their scope; links lead to public repositories when appropriate. Collaborative work is credited separately from independently hosted code.</p>
-  <div class="section-heading"><h2>Featured research software</h2><span>Selected projects</span></div>
-  <div class="cards">
-    <article class="card">
-      <div class="card-top">
-        <div class="image-wrap"><img src="https://raw.githubusercontent.com/mjpuma/FoodShockCascadeModel/master/clean_vector_logo_on_white_background_a_circular.png" alt="Food Shock Cascade emblem" loading="lazy"></div>
-        <div><h3>Food Shock Cascade</h3><div class="eyebrow">Food systems · Network modeling</div></div>
-      </div>
-      <p>The FSC model simulates how production shocks and export restrictions propagate through international agricultural trade networks, examining the roles of trade allocation and food reserves.</p>
-      <a class="link" href="https://github.com/mjpuma/FoodShockCascadeModel" target="_blank" rel="noopener">Explore repository →</a>
-    </article>
-    <article class="card">
-      <div class="card-top">
-        <div class="image-wrap"><img src="https://raw.githubusercontent.com/mjpuma/sheaf-model/main/assets/SHEAF_Model_logo.png" alt="Agrimate–SHEAF agricultural model logo with cereal crops inside a green ring" loading="lazy"></div>
-        <div><h3>Agrimate–SHEAF</h3><div class="eyebrow">Agricultural markets · Collaboration</div></div>
-      </div>
-      <p>Developed in collaboration with Christian Otto and Kilian Kuhla at the Potsdam Institute for Climate Impact Research (PIK), this extension of Agrimate explores crop substitution, strategic policy responses, and vulnerability to food-market disruptions.</p>
-      <div class="note partners">Collaborative research development · Columbia University and PIK</div>
-    </article>
-    <article class="card">
-      <div class="card-top with-banner">
-        <div class="image-wrap"><img src="https://raw.githubusercontent.com/mjpuma/TherapeuticProvisioning/main/assets/therapeutic-provisioning-logo-new.png" alt="TherapeuticProvisioning logo showing a balance between a sealed therapeutic food sachet and fortified blended food, with an early warning signal" loading="lazy"></div>
-        <div><h3>TherapeuticProvisioning</h3><div class="eyebrow">Humanitarian nutrition · Stochastic decision-making</div></div>
-      </div>
-      <p>A research model examining how to allocate constrained humanitarian nutrition budgets between ready-to-use therapeutic food (RUTF) and fortified blended food (CSB+). It evaluates procurement choices under uncertain caseloads, early-warning information, transport disruptions, and competing resource needs across illustrative crisis settings.</p>
-      <div class="note"><strong>In development · Unpublished</strong><br>Exploratory research code and scenarios. Not validated operational guidance for humanitarian procurement or clinical decisions.</div>
-      <a class="link" href="https://github.com/mjpuma/TherapeuticProvisioning" target="_blank" rel="noopener">Explore repository →</a>
-    </article>
-    <article class="card">
-      <div class="card-top with-banner">
-        <div class="image-wrap"><img src="https://raw.githubusercontent.com/mjpuma/RolesMigrationRefugees/main/assets/migration_network_roles_logo.webp" alt="Migration and Refugee Network Roles globe, network and mobility logo" loading="lazy"></div>
-        <div><h3>Migration &amp; Refugee Network Roles</h3><div class="eyebrow">Mobility · Network analysis</div></div>
-      </div>
-      <p>Research code for analyzing international migrant and refugee flow networks, classifying countries' structural roles, and examining relationships with conflict, socioeconomic conditions, drought, and disasters.</p>
-      <a class="link" href="https://github.com/mjpuma/RolesMigrationRefugees" target="_blank" rel="noopener">Explore repository →</a>
-    </article>
-    <article class="card">
-      <div class="card-top with-banner">
-        <div class="image-wrap"><img src="https://raw.githubusercontent.com/mjpuma/AgRichterScale/main/assets/AgRichter_scale_banner.webp" alt="AgRichter Scale magnitude dial and agricultural seismograph logo" loading="lazy"></div>
-        <div><h3>AgRichter Scale</h3><div class="eyebrow">Hazard magnitude · Agricultural production</div></div>
-      </div>
-      <p>A quantitative framework for characterizing the magnitude of agricultural production disruptions, using spatial production data and harvest–production envelopes to analyze potential losses.</p>
-      <a class="link" href="https://github.com/mjpuma/AgRichterScale" target="_blank" rel="noopener">Explore repository →</a>
-    </article>
-    <article class="card">
-      <div class="card-top with-banner">
-        <div class="image-wrap"><img src="https://raw.githubusercontent.com/mjpuma/FoodTradeNetwork/main/assets/virtual_water_trade_logo.webp" alt="Virtual Water Trade globe, grain, ship and water logo" loading="lazy"></div>
-        <div><h3>Virtual Water Trade</h3><div class="eyebrow">Water resources · Global food trade</div></div>
-      </div>
-      <p>An R-based framework for tracing virtual water embedded in international agricultural trade, examining blue- and green-water dependencies, trade-network structure, and exposure to water scarcity. The work builds on research themes explored in the 2017 <em>Nature</em> paper <a href="https://doi.org/10.1038/nature21403" target="_blank" rel="noopener">“Groundwater depletion embedded in international food trade”</a> (Dalin, Wada, Kastner &amp; Puma).</p>
-      <a class="link" href="https://github.com/mjpuma/FoodTradeNetwork" target="_blank" rel="noopener">Explore repository →</a>
-    </article>
+  <p class="intro">Selected research models and tools, organized by the questions they address rather than by software type. Projects range from published work and established methods to active development and exploratory prototypes.</p>
+  <section class="research-frame" aria-labelledby="research-program-heading">
+    <h2 id="research-program-heading">A connected research program</h2>
+    <p>My work uses quantitative models and network analysis to study how environmental changes affect food production, how disturbances propagate through interconnected systems, and what they mean for human vulnerability and decision-making. The projects below span this progression—from foundational process models to food-system risk and response.</p>
+    <div class="research-arc" aria-label="Three connected research themes">
+      <span>Environmental &amp; production processes</span><span>Systemic food risks</span><span>Human consequences &amp; decisions</span>
+    </div>
+  </section>
+  <div class="section-heading"><h2>Selected research software</h2><span>Organized by research theme</span></div>
+  <section class="software-theme" aria-labelledby="theme-environmental">
+    <div class="theme-heading"><h3 id="theme-environmental">Environmental and production processes</h3><p>Foundational modeling of water, landscapes, and crop production—methods for understanding where environmental constraints and variability originate.</p></div>
+    <div class="cards">
     <article class="card">
       <div class="card-top with-banner">
         <div class="image-wrap"><img src="https://raw.githubusercontent.com/mjpuma/SoilWaterFlow/master/assets/soilwaterflow-logo.png" alt="SoilWaterFlow logo showing soil layers, root systems, and a water droplet" loading="lazy"></div>
@@ -194,21 +166,81 @@
     </article>
     <article class="card">
       <div class="card-top">
-        <div class="image-wrap"><img src="https://raw.githubusercontent.com/mjpuma/tessera/main/assets/tessera-icon.png" alt="TESSERA crop-mixture research emblem" loading="lazy"></div>
-        <div><h3>TESSERA</h3><div class="eyebrow">Crop diversity · Resilience</div></div>
-      </div>
-      <p>An exploratory model linking crop variety mixtures and field-level environmental variability to regional production stability and local grain-market outcomes. Parameters remain illustrative and uncalibrated.</p>
-      <a class="link" href="https://github.com/mjpuma/tessera" target="_blank" rel="noopener">Explore repository →</a>
-    </article>
-    <article class="card">
-      <div class="card-top">
         <div class="image-wrap"><img src="https://raw.githubusercontent.com/mjpuma/RiverDeltaModel/main/assets/RiverDeltaModel_logo.webp" alt="RiverDeltaModel branching river delta emblem" loading="lazy"></div>
         <div><h3>RiverDeltaModel</h3><div class="eyebrow">Geomorphology · Environmental modeling</div></div>
       </div>
       <p>A cellular model of river-delta evolution, channel avulsions, sediment routing, and three-dimensional stratigraphy. Originally developed in Fortran and subsequently modernized and validated in Python.</p>
       <a class="link" href="https://github.com/mjpuma/RiverDeltaModel" target="_blank" rel="noopener">Explore repository →</a>
     </article>
-  </div>
+    <article class="card">
+      <div class="card-top">
+        <div class="image-wrap"><img src="https://raw.githubusercontent.com/mjpuma/tessera/main/assets/tessera-icon.png" alt="TESSERA crop-mixture research emblem" loading="lazy"></div>
+        <div><h3>TESSERA</h3><div class="eyebrow">Crop diversity · Resilience</div></div>
+      </div>
+      <p>An exploratory model linking crop variety mixtures and field-level environmental variability to regional production stability and local grain-market outcomes. Parameters remain illustrative and uncalibrated.</p>
+      <a class="link" href="https://github.com/mjpuma/tessera" target="_blank" rel="noopener">Explore repository →</a>
+    </article>
+    </div>
+  </section>
+  <section class="software-theme" aria-labelledby="theme-systemic">
+    <div class="theme-heading"><h3 id="theme-systemic">Systemic food risks</h3><p>Quantifying disruptions in agricultural production and how exposure propagates through trade networks, resources, and markets.</p></div>
+    <div class="cards">
+    <article class="card">
+      <div class="card-top with-banner">
+        <div class="image-wrap"><img src="https://raw.githubusercontent.com/mjpuma/AgRichterScale/main/assets/AgRichter_scale_banner.webp" alt="AgRichter Scale magnitude dial and agricultural seismograph logo" loading="lazy"></div>
+        <div><h3>AgRichter Scale</h3><div class="eyebrow">Hazard magnitude · Agricultural production</div></div>
+      </div>
+      <p>A quantitative framework for characterizing the magnitude of agricultural production disruptions, using spatial production data and harvest–production envelopes to analyze potential losses.</p>
+      <a class="link" href="https://github.com/mjpuma/AgRichterScale" target="_blank" rel="noopener">Explore repository →</a>
+    </article>
+    <article class="card">
+      <div class="card-top with-banner">
+        <div class="image-wrap"><img src="https://raw.githubusercontent.com/mjpuma/FoodTradeNetwork/main/assets/virtual_water_trade_logo.webp" alt="Virtual Water Trade globe, grain, ship and water logo" loading="lazy"></div>
+        <div><h3>Virtual Water Trade</h3><div class="eyebrow">Water resources · Global food trade</div></div>
+      </div>
+      <p>An R-based framework for tracing virtual water embedded in international agricultural trade, examining blue- and green-water dependencies, trade-network structure, and exposure to water scarcity. The work builds on research themes explored in the 2017 <em>Nature</em> paper <a href="https://doi.org/10.1038/nature21403" target="_blank" rel="noopener">“Groundwater depletion embedded in international food trade”</a> (Dalin, Wada, Kastner &amp; Puma).</p>
+      <a class="link" href="https://github.com/mjpuma/FoodTradeNetwork" target="_blank" rel="noopener">Explore repository →</a>
+    </article>
+    <article class="card">
+      <div class="card-top">
+        <div class="image-wrap"><img src="https://raw.githubusercontent.com/mjpuma/FoodShockCascadeModel/master/clean_vector_logo_on_white_background_a_circular.png" alt="Food Shock Cascade emblem" loading="lazy"></div>
+        <div><h3>Food Shock Cascade</h3><div class="eyebrow">Food systems · Network modeling</div></div>
+      </div>
+      <p>The FSC model simulates how production shocks and export restrictions propagate through international agricultural trade networks, examining the roles of trade allocation and food reserves.</p>
+      <a class="link" href="https://github.com/mjpuma/FoodShockCascadeModel" target="_blank" rel="noopener">Explore repository →</a>
+    </article>
+    <article class="card">
+      <div class="card-top">
+        <div class="image-wrap"><img src="https://raw.githubusercontent.com/mjpuma/sheaf-model/main/assets/SHEAF_Model_logo.png" alt="Agrimate–SHEAF agricultural model logo with cereal crops inside a green ring" loading="lazy"></div>
+        <div><h3>Agrimate–SHEAF</h3><div class="eyebrow">Agricultural markets · Collaboration</div></div>
+      </div>
+      <p>Developed in collaboration with Christian Otto and Kilian Kuhla at the Potsdam Institute for Climate Impact Research (PIK), this extension of Agrimate explores crop substitution, strategic policy responses, and vulnerability to food-market disruptions.</p>
+      <div class="note partners">Collaborative research development · Columbia University and PIK</div>
+    </article>
+    </div>
+  </section>
+  <section class="software-theme" aria-labelledby="theme-decisions">
+    <div class="theme-heading"><h3 id="theme-decisions">Human consequences and decisions</h3><p>Extending systems analysis to displacement and choices under uncertainty, including exploratory work on humanitarian responses.</p></div>
+    <div class="cards">
+    <article class="card">
+      <div class="card-top with-banner">
+        <div class="image-wrap"><img src="https://raw.githubusercontent.com/mjpuma/RolesMigrationRefugees/main/assets/migration_network_roles_logo.webp" alt="Migration and Refugee Network Roles globe, network and mobility logo" loading="lazy"></div>
+        <div><h3>Migration &amp; Refugee Network Roles</h3><div class="eyebrow">Mobility · Network analysis</div></div>
+      </div>
+      <p>Research code for analyzing international migrant and refugee flow networks, classifying countries' structural roles, and examining relationships with conflict, socioeconomic conditions, drought, and disasters.</p>
+      <a class="link" href="https://github.com/mjpuma/RolesMigrationRefugees" target="_blank" rel="noopener">Explore repository →</a>
+    </article>
+    <article class="card">
+      <div class="card-top with-banner">
+        <div class="image-wrap"><img src="https://raw.githubusercontent.com/mjpuma/TherapeuticProvisioning/main/assets/therapeutic-provisioning-logo-new.png" alt="TherapeuticProvisioning logo showing a balance between a sealed therapeutic food sachet and fortified blended food, with an early warning signal" loading="lazy"></div>
+        <div><h3>TherapeuticProvisioning</h3><div class="eyebrow">Humanitarian nutrition · Stochastic decision-making</div></div>
+      </div>
+      <p>A research model examining how to allocate constrained humanitarian nutrition budgets between ready-to-use therapeutic food (RUTF) and fortified blended food (CSB+). It evaluates procurement choices under uncertain caseloads, early-warning information, transport disruptions, and competing resource needs across illustrative crisis settings.</p>
+      <div class="note"><strong>In development · Unpublished</strong><br>Exploratory research code and scenarios. Not validated operational guidance for humanitarian procurement or clinical decisions.</div>
+      <a class="link" href="https://github.com/mjpuma/TherapeuticProvisioning" target="_blank" rel="noopener">Explore repository →</a>
+    </article>
+    </div>
+  </section>
   <section class="dataset-section" aria-labelledby="dataset-heading">
     <div class="section-heading"><h2 id="dataset-heading">Research Datasets</h2><span>Curated research resources</span></div>
     <div class="cards">
